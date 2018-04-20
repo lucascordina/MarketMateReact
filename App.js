@@ -1,33 +1,19 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createStore, applyMiddleware } from 'redux';
-import { Provider, connect } from 'react-redux';
+import { Provider } from 'react-redux';
 import axios from 'axios';
 import axiosMiddleware from 'redux-axios-middleware';
 
 import reducer from './reducer';
-import RepoListView from './RepoListView';
+import RepoListView from './Components/RepoListView';
 
 const client = axios.create({
   baseURL: 'https://api.github.com',
-  responseType: 'json'
+  responseType: 'json',
 });
 
 const store = createStore(reducer, applyMiddleware(axiosMiddleware(client)));
-
-
-
-export default class App extends React.Component {
-  render() {
-    return (
-       <Provider store={store}>
-        <View style={styles.container}>
-          <RepoListView />
-        </View>
-      </Provider>
-    );
-  }
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -36,4 +22,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  heading: {
+    fontSize: 42,
+  },
 });
+
+export default class App extends React.Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <View style={styles.container}>
+          <Text style={styles.heading}>test</Text>
+          <RepoListView />
+        </View>
+      </Provider>
+    );
+  }
+}

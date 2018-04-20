@@ -1,18 +1,33 @@
 import React, { Component } from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
 
-import { listRepos } from './reducer';
+import { listRepos } from './../reducer';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  item: {
+    padding: 16,
+    marginTop: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+  },
+});
 
 class RepoListView extends Component {
   componentDidMount() {
     this.props.listRepos('lucascordina');
   }
+
   renderItem = ({ item }) => (
     <View style={styles.item}>
       <Text>{item.name}</Text>
     </View>
   );
+
   render() {
     const { repos } = this.props;
     return (
@@ -24,27 +39,20 @@ class RepoListView extends Component {
     );
   }
 }
+RepoListView.propTypes = {
+  listRepos: PropTypes.func.isRequired,
+  repos: PropTypes.array.isRequired,
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
-  item: {
-    padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc'
-  }
-});
-
-const mapStateToProps = state => {
-  let storedRepositories = state.repos.map(repo => ({ key: repo.id, ...repo }));
+const mapStateToProps = (state) => {
+  const storedRepositories = state.repos.map(repo => ({ key: repo.id, ...repo }));
   return {
-    repos: storedRepositories
+    repos: storedRepositories,
   };
 };
 
 const mapDispatchToProps = {
-  listRepos
+  listRepos,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(RepoListView);
