@@ -6,7 +6,7 @@ import axios from 'axios';
 import axiosMiddleware from 'redux-axios-middleware';
 
 import reducer from './reducer';
-import RepoListView from './Components/RepoListView';
+import RepoListView from './Components/RepoList/RepoListView';
 
 const client = axios.create({
   baseURL: 'https://api.github.com',

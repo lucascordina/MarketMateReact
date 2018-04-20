@@ -12,11 +12,11 @@ export default function reducer(state = { repos: [] }, action) {
       return {
         ...state,
         loading: false,
-        error: 'Error while fetching repositories'
+        error: 'Error while fetching repositories',
       };
     default:
       return state;
-  } 
+  }
 }
 
 export function listRepos(user) {
@@ -24,8 +24,8 @@ export function listRepos(user) {
     type: GET_REPOS,
     payload: {
       request: {
-        url: `/users/${user}/repos`
-      }
-    }
+        url: `/users/${user}/repos`,
+      },
+    },
   };
 }

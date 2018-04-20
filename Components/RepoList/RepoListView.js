@@ -1,21 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, StyleSheet } from 'react-native';
+import { View, Text, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 
-import { listRepos } from './../reducer';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  item: {
-    padding: 16,
-    marginTop: 20,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
-  },
-});
+import { listRepos } from './../../reducer';
+import styles from './RepoListStyle';
 
 class RepoListView extends Component {
   componentDidMount() {
