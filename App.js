@@ -1,12 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import axios from 'axios';
 import axiosMiddleware from 'redux-axios-middleware';
 
 import reducer from './reducer';
-import RepoListView from './Components/RepoList/RepoListView';
+
+import HeaderView from './components/header/HeaderView';
+import RepoListView from './components/repo-list/RepoListView';
 
 const client = axios.create({
   baseURL: 'https://api.github.com',
@@ -32,7 +34,7 @@ export default class App extends React.Component {
     return (
       <Provider store={store}>
         <View style={styles.container}>
-          <Text style={styles.heading}>test</Text>
+          <HeaderView />
           <RepoListView />
         </View>
       </Provider>
