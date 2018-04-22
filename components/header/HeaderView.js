@@ -10,14 +10,6 @@ export default class HeaderView extends Component {
       currentListName: 'My List',
       searchValue: '',
     };
-
-    this.handleSearchUpdate = this.handleSearchUpdate.bind(this);
-  }
-
-  handleSearchUpdate(e) {
-    console.log(e);
-    this.setState(() => ({ currentListName: this.state.searchValue }));
-    console.log(this.state);
   }
 
   render() {
