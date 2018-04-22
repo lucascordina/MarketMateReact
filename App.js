@@ -9,6 +9,7 @@ import reducer from './reducer';
 
 import HeaderView from './components/header/HeaderView';
 import RepoListView from './components/repo-list/RepoListView';
+import IngredientListView from './components/ingredient-list/IngredientListView';
 
 const client = axios.create({
   baseURL: 'https://api.github.com',
@@ -36,6 +37,7 @@ export default class App extends React.Component {
         <View style={styles.container}>
           <HeaderView />
           <RepoListView />
+          <IngredientListView />
         </View>
       </Provider>
     );
