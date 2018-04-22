@@ -21,7 +21,7 @@ export default function reducer(state = { repos: [], ingredients: [] }, action) 
     case GET_INGREDIENTS:
       return { ...state, loading: true };
     case GET_INGREDIENT_SUCCESS:
-      return { ...state, loading: false, repos: action.payload.data };
+      return { ...state, loading: false, ingredients: action.payload };
     case GET_INGREDIENTS_FAIL:
       return {
         ...state,
@@ -46,7 +46,7 @@ export function listRepos(user) {
 
 export function listIngredients() {
   return {
-    type: GET_INGREDIENTS,
+    type: GET_INGREDIENT_SUCCESS,
     payload: {
       ingredients: [
         'Chicken',

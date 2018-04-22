@@ -1,4 +1,4 @@
-import { React, Component } from 'react';
+import React, { Component } from 'react';
 import { FlatList, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
@@ -15,7 +15,7 @@ class IngredientListView extends Component {
   )
 
   render() {
-    const { ingredients } = this.myIngredients;
+    const { ingredients } = this.props.ingredients;
     return (
       <FlatList
         data={ingredients}
@@ -30,16 +30,7 @@ IngredientListView.propTypes = {
   ingredients: PropTypes.array.isRequired,
 };
 
-const mapStateToProps = (state) => {
-  console.log(state);
-  const mappedIngredients = state.ingredients.map(ingredient => ({
-    key: ingredient.id, ...ingredient,
-  }));
-
-  return {
-    ingredients: mappedIngredients,
-  };
-};
+const mapStateToProps = state => ({ ingredients: state.ingredients });
 
 const mapDispatchToProps = {
   listIngredients,
