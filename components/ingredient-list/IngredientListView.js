@@ -12,12 +12,22 @@ class IngredientListView extends Component {
     this.props.listIngredients();
   }
 
-  renderItem = ({ item }) => (
-    <View style={item.isChecked ? styles.ingredientCellChecked : styles.ingredientCell}>
-      <Text style={item.isChecked ? styles.ingredientTitleChecked : styles.ingredientTitle}>
-        {item.title}
+  getCellStyle(rowIndex) {
+    if (rowIndex === 0) {
+      return styles.ingredientCellFirst;
+    } else if (rowIndex === this.props.ingredients.ingredients.length - 1) {
+      return styles.ingredientCellLast;
+    }
+    return styles.ingredientCell;
+  }
+
+  renderItem = row => (
+    <View style={this.getCellStyle(row.index)}>
+      <Text style={row.item.isChecked ? styles.ingredientTitleChecked : styles.ingredientTitle}>
+        {row.item.title}
       </Text>
-      <Text style={styles.ingredientSubtitle}>{item.amount}</Text>
+      <Text style={styles.ingredientSubtitle}>{row.item.amount}</Text>
+      <Text>{JSON.stringify(this.props.ingredients.ingredients.length)}</Text>
     </View>
   )
 
@@ -27,7 +37,7 @@ class IngredientListView extends Component {
       <FlatList
         style={styles.listContainer}
         data={ingredients}
-        renderItem={this.renderItem}
+        renderItem={item => this.renderItem(item)}
       />
     );
   }

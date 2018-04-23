@@ -24,7 +24,7 @@ export default StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: brandColors.borderColorBold,
   },
-  ingredientCellChecked: {
+  ingredientCellFirst: {
     flex: 1,
     backgroundColor: brandColors.cellColor,
     paddingTop: 12,
@@ -33,8 +33,20 @@ export default StyleSheet.create({
     paddingRight: 16,
     textAlign: 'left',
     borderBottomWidth: 1,
-    opacity: 0.6,
+    borderTopLeftRadius: 5,
+    borderTopRightRadius: 5,
     borderColor: brandColors.borderColorBold,
+  },
+  ingredientCellLast: {
+    flex: 1,
+    backgroundColor: brandColors.cellColor,
+    paddingTop: 12,
+    paddingBottom: 12,
+    paddingLeft: 16,
+    paddingRight: 16,
+    textAlign: 'left',
+    borderBottomLeftRadius: 5,
+    borderBottomRightRadius: 5,
   },
   ingredientTitle: {
     fontSize: 18,
