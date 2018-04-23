@@ -1,3 +1,5 @@
+import ListIngredient from './models/ListIngredient';
+
 export const GET_INGREDIENTS = 'MarketMateReact/ingredients/LOAD';
 export const GET_INGREDIENT_SUCCESS = 'MarketMateReact/ingredients/LOAD_SUCCESS';
 export const GET_INGREDIENTS_FAIL = 'MarketMateReact/ingredients/LOAD_FAIL';
@@ -24,9 +26,9 @@ export function listIngredients() {
     type: GET_INGREDIENT_SUCCESS,
     payload: {
       ingredients: [
-        'Chicken',
-        'eggs',
-        'milk',
+        new ListIngredient('Chicken', '500 gr', false, false),
+        new ListIngredient('Eggs', '6', true, false),
+        new ListIngredient('Milk', '300 ml', false, true),
       ],
     },
   };

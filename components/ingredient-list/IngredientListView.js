@@ -14,8 +14,8 @@ class IngredientListView extends Component {
 
   renderItem = ({ item }) => (
     <View style={styles.ingredientCell}>
-      <Text style={styles.ingredientTitle}>{item}</Text>
-      <Text style={styles.ingredientSubtitle}>500 gr.</Text>
+      <Text style={styles.ingredientTitle}>{item.title}</Text>
+      <Text style={styles.ingredientSubtitle}>{item.amount}</Text>
     </View>
   )
 
