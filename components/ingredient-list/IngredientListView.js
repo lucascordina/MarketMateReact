@@ -27,7 +27,6 @@ class IngredientListView extends Component {
         {row.item.title}
       </Text>
       <Text style={styles.ingredientSubtitle}>{row.item.amount}</Text>
-      <Text>{JSON.stringify(this.props.ingredients.ingredients.length)}</Text>
     </View>
   )
 
@@ -38,6 +37,7 @@ class IngredientListView extends Component {
         style={styles.listContainer}
         data={ingredients}
         renderItem={item => this.renderItem(item)}
+        keyExtractor={(item, index) => `ingredient-list-row-${index}`}
       />
     );
   }
@@ -45,7 +45,7 @@ class IngredientListView extends Component {
 
 IngredientListView.propTypes = {
   listIngredients: PropTypes.func.isRequired,
-  ingredients: PropTypes.array.isRequired,
+  ingredients: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({ ingredients: state.ingredients });
