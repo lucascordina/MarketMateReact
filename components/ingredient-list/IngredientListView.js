@@ -13,8 +13,10 @@ class IngredientListView extends Component {
   }
 
   renderItem = ({ item }) => (
-    <View style={styles.ingredientCell}>
-      <Text style={styles.ingredientTitle}>{item.title}</Text>
+    <View style={item.isChecked ? styles.ingredientCellChecked : styles.ingredientCell}>
+      <Text style={item.isChecked ? styles.ingredientTitleChecked : styles.ingredientTitle}>
+        {item.title}
+      </Text>
       <Text style={styles.ingredientSubtitle}>{item.amount}</Text>
     </View>
   )

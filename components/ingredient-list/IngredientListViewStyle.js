@@ -24,8 +24,25 @@ export default StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: brandColors.borderColorBold,
   },
+  ingredientCellChecked: {
+    flex: 1,
+    backgroundColor: brandColors.cellColor,
+    paddingTop: 12,
+    paddingBottom: 12,
+    paddingLeft: 16,
+    paddingRight: 16,
+    textAlign: 'left',
+    borderBottomWidth: 1,
+    opacity: 0.6,
+    borderColor: brandColors.borderColorBold,
+  },
   ingredientTitle: {
     fontSize: 18,
+    color: brandColors.primaryTextColor,
+  },
+  ingredientTitleChecked: {
+    fontSize: 18,
+    textDecorationLine: 'line-through',
     color: brandColors.primaryTextColor,
   },
   ingredientSubtitle: {
