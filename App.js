@@ -9,6 +9,7 @@ import reducer from './reducer';
 
 import HeaderView from './components/header/HeaderView';
 import IngredientListView from './components/ingredient-list/IngredientListView';
+import brandColors from './assets/styling/colors';
 
 const client = axios.create({
   baseURL: 'https://api.github.com',
@@ -20,7 +21,7 @@ const store = createStore(reducer, applyMiddleware(axiosMiddleware(client)));
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: brandColors.defaultBackground,
     alignItems: 'center',
     justifyContent: 'center',
   },

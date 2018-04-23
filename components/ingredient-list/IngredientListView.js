@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { FlatList, Text } from 'react-native';
+import { View, FlatList, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 
 import { listIngredients } from './../../reducer';
+
+import styles from './IngredientListViewStyle';
 
 class IngredientListView extends Component {
   componentDidMount() {
@@ -11,13 +13,17 @@ class IngredientListView extends Component {
   }
 
   renderItem = ({ item }) => (
-    <Text>{item}</Text>
+    <View style={styles.ingredientCell}>
+      <Text style={styles.ingredientTitle}>{item}</Text>
+      <Text style={styles.ingredientSubtitle}>500 gr.</Text>
+    </View>
   )
 
   render() {
     const { ingredients } = this.props.ingredients;
     return (
       <FlatList
+        style={styles.listContainer}
         data={ingredients}
         renderItem={this.renderItem}
       />
