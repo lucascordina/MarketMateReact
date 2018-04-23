@@ -24,12 +24,10 @@ export default function reducer(state = { repos: [], ingredients: [] }, action) 
 export function listIngredients() {
   return {
     type: GET_INGREDIENT_SUCCESS,
-    payload: {
-      ingredients: [
-        new ListIngredient('Chicken', '500 gr', false, false),
-        new ListIngredient('Eggs', '6', true, false),
-        new ListIngredient('Milk', '300 ml', false, true),
-      ],
-    },
+    payload: [
+      new ListIngredient('Chicken', '500 gr', false, false),
+      new ListIngredient('Eggs', '6', true, false),
+      new ListIngredient('Milk', '300 ml', false, true),
+    ],
   };
 }

@@ -15,7 +15,7 @@ class IngredientListView extends Component {
   getCellStyle(rowIndex) {
     if (rowIndex === 0) {
       return styles.ingredientCellFirst;
-    } else if (rowIndex === this.props.ingredients.ingredients.length - 1) {
+    } else if (rowIndex === this.props.ingredients.length - 1) {
       return styles.ingredientCellLast;
     }
     return styles.ingredientCell;
@@ -31,7 +31,7 @@ class IngredientListView extends Component {
   )
 
   render() {
-    const { ingredients } = this.props.ingredients;
+    const { ingredients } = this.props;
     return (
       <FlatList
         style={styles.listContainer}
@@ -45,7 +45,7 @@ class IngredientListView extends Component {
 
 IngredientListView.propTypes = {
   listIngredients: PropTypes.func.isRequired,
-  ingredients: PropTypes.object.isRequired,
+  ingredients: PropTypes.array.isRequired,
 };
 
 const mapStateToProps = state => ({ ingredients: state.ingredients });
