@@ -5,7 +5,7 @@ export const GET_LIST = 'MarketMateReact/list/LOAD';
 export const GET_LIST_SUCCESS = 'MarketMateReact/list/LOAD_SUCCESS';
 export const GET_LIST_FAIL = 'MarketMateReact/list/LOAD_FAIL';
 
-export default function reducer(state = { list: new List('') }, action) {
+export default function reducer(state = { list: new List() }, action) {
   switch (action.type) {
     case GET_LIST:
       return { ...state, loading: true };
