@@ -21,7 +21,6 @@ function GenerateMockListCategories() {
 
 export default class ListService {
   static GetDefaultList() {
-    console.log('yoooo');
     return new List('My List', GenerateMockListCategories());
   }
 }
