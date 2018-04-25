@@ -3,19 +3,19 @@ import { View, FlatList, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 
-import { listIngredients } from './../../reducer';
+import { getList } from './../../reducer';
 
 import styles from './IngredientListViewStyle';
 
 class IngredientListView extends Component {
   componentDidMount() {
-    this.props.listIngredients();
+    this.props.getList();
   }
 
   getCellStyle(rowIndex) {
     if (rowIndex === 0) {
       return styles.ingredientCellFirst;
-    } else if (rowIndex === this.props.ingredients.length - 1) {
+    } else if (rowIndex === this.props.list.listCategories[0].listIngredients.length - 1) {
       return styles.ingredientCellLast;
     }
     return styles.ingredientCell;
@@ -31,11 +31,11 @@ class IngredientListView extends Component {
   )
 
   render() {
-    const { ingredients } = this.props;
+    const { list } = this.props;
     return (
       <FlatList
         style={styles.listContainer}
-        data={ingredients}
+        data={list.listCategories[0].listIngredients}
         renderItem={item => this.renderItem(item)}
         keyExtractor={(item, index) => `ingredient-list-row-${index}`}
       />
@@ -44,14 +44,14 @@ class IngredientListView extends Component {
 }
 
 IngredientListView.propTypes = {
-  listIngredients: PropTypes.func.isRequired,
-  ingredients: PropTypes.array.isRequired,
+  getList: PropTypes.func.isRequired,
+  list: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = state => ({ ingredients: state.ingredients });
+const mapStateToProps = state => ({ list: state.list });
 
 const mapDispatchToProps = {
-  listIngredients,
+  getList,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(IngredientListView);

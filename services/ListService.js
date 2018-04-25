@@ -1,25 +1,27 @@
 import ListIngredient from './../models/ListIngredient';
 import ListCategory from './../models/ListCategory';
+import AmountType from './../models/AmountType';
 import List from './../models/List';
 
-function generateMockIngredients() {
+function GenerateMockIngredients() {
   return [
-    new ListIngredient('Chicken', '500 gr', false, false),
-    new ListIngredient('Eggs', '6', true, false),
-    new ListIngredient('Milk', '300 ml', false, true),
+    new ListIngredient('Chicken', '500', AmountType.GRAMS, false, false),
+    new ListIngredient('Eggs', '6', null, true, false),
+    new ListIngredient('Milk', '300', AmountType.MILLILITERS, false, true),
   ];
 }
 
-function generateMockListCategories() {
+function GenerateMockListCategories() {
   return [
-    new ListCategory('Dairy', generateMockIngredients()),
-    new ListCategory('Produce', generateMockIngredients()),
-    new ListCategory('Meat', generateMockIngredients()),
+    new ListCategory('Dairy', GenerateMockIngredients()),
+    new ListCategory('Produce', GenerateMockIngredients()),
+    new ListCategory('Meat', GenerateMockIngredients()),
   ];
 }
 
 export default class ListService {
-  static getDefaultList() {
-    return new List('My List', generateMockListCategories());
+  static GetDefaultList() {
+    console.log('yoooo');
+    return new List('My List', GenerateMockListCategories());
   }
 }

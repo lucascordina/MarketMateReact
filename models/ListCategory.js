@@ -1,5 +1,7 @@
+import ListIngredient from './ListIngredient';
+
 export default class ListCategory {
-  constructor(name, listIngredients: []) {
+  constructor(name, listIngredients = [new ListIngredient('')]) {
     this.name = name;
     this.listIngredients = listIngredients;
   }

@@ -1,16 +1,17 @@
-import ListIngredient from './models/ListIngredient';
+import ListService from './services/ListService';
+import List from './models/List';
 
-export const GET_INGREDIENTS = 'MarketMateReact/ingredients/LOAD';
-export const GET_INGREDIENT_SUCCESS = 'MarketMateReact/ingredients/LOAD_SUCCESS';
-export const GET_INGREDIENTS_FAIL = 'MarketMateReact/ingredients/LOAD_FAIL';
+export const GET_LIST = 'MarketMateReact/list/LOAD';
+export const GET_LIST_SUCCESS = 'MarketMateReact/list/LOAD_SUCCESS';
+export const GET_LIST_FAIL = 'MarketMateReact/list/LOAD_FAIL';
 
-export default function reducer(state = { repos: [], ingredients: [] }, action) {
+export default function reducer(state = { list: new List('') }, action) {
   switch (action.type) {
-    case GET_INGREDIENTS:
+    case GET_LIST:
       return { ...state, loading: true };
-    case GET_INGREDIENT_SUCCESS:
-      return { ...state, loading: false, ingredients: action.payload };
-    case GET_INGREDIENTS_FAIL:
+    case GET_LIST_SUCCESS:
+      return { ...state, loading: false, list: action.payload };
+    case GET_LIST_FAIL:
       return {
         ...state,
         loading: false,
@@ -21,13 +22,9 @@ export default function reducer(state = { repos: [], ingredients: [] }, action) 
   }
 }
 
-export function listIngredients() {
+export function getList() {
   return {
-    type: GET_INGREDIENT_SUCCESS,
-    payload: [
-      new ListIngredient('Chicken', '500 gr', false, false),
-      new ListIngredient('Eggs', '6', true, false),
-      new ListIngredient('Milk', '300 ml', false, true),
-    ],
+    type: GET_LIST_SUCCESS,
+    payload: ListService.GetDefaultList(),
   };
 }
