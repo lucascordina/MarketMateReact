@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, Button } from 'react-native';
+import { View, Text, TextInput } from 'react-native';
 
 import style from './HeaderViewStyle';
 
@@ -21,7 +21,6 @@ export default class HeaderView extends Component {
           value={this.state.searchValue}
           onChangeText={text => this.setState({ currentListName: text })}
         />
-        <Button title="Add" />
       </View>
     );
   }

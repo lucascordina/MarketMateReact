@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, FlatList, Text } from 'react-native';
+import { View, SectionList, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 
@@ -32,11 +32,22 @@ class IngredientListView extends Component {
 
   render() {
     const { list } = this.props;
+    const { sections } = this.props;
+    list.listCategories.forEach((value) => {
+      const section = {
+        data: value.listIngredients,
+        title: value.name,
+      };
+      sections.push(section);
+    });
     return (
-      <FlatList
+      <SectionList
         style={styles.listContainer}
-        data={list.listCategories[0].listIngredients}
+        sections={sections}
         renderItem={item => this.renderItem(item)}
+        renderSectionHeader={item => (
+          <Text>{item.section.title}</Text>
+        )}
         keyExtractor={(item, index) => `ingredient-list-row-${index}`}
       />
     );
@@ -46,9 +57,10 @@ class IngredientListView extends Component {
 IngredientListView.propTypes = {
   getList: PropTypes.func.isRequired,
   list: PropTypes.object.isRequired,
+  sections: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = state => ({ list: state.list });
+const mapStateToProps = state => ({ list: state.list, sections: [] });
 
 const mapDispatchToProps = {
   getList,
