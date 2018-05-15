@@ -6,8 +6,9 @@ const brandColors = {
   primaryTextColor: '#343434',
 
   borderColor: '#ddd',
+  borderColorBold: 'rgba(0,0,0,0.19)',
   cellColor: '#fff',
-  shadowColor: 'rgba(0,0,0,100)',
+  shadowColor: 'rgba(0,0,0)',
 };
 
 export default brandColors;
