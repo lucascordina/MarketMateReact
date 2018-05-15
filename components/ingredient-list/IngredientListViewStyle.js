@@ -59,4 +59,12 @@ export default StyleSheet.create({
     color: brandColors.primaryTextColor,
     fontWeight: '300',
   },
+  ingredientCategoryHeader: {
+    fontSize: 24,
+    color: brandColors.secondaryTextColor,
+    fontWeight: '800',
+    marginTop: 20,
+    marginBottom: 20,
+    marginLeft: 16,
+  },
 });

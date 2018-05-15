@@ -46,7 +46,7 @@ class IngredientListView extends Component {
         sections={sections}
         renderItem={item => this.renderItem(item)}
         renderSectionHeader={item => (
-          <Text>{item.section.title}</Text>
+          <Text style={styles.ingredientCategoryHeader}>{item.section.title}</Text>
         )}
         keyExtractor={(item, index) => `ingredient-list-row-${index}`}
       />

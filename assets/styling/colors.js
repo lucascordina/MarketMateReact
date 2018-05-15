@@ -4,6 +4,7 @@ const brandColors = {
 
   headingTextColor: '#fff',
   primaryTextColor: '#343434',
+  secondaryTextColor: '#6F6F6F',
 
   borderColor: '#ddd',
   borderColorBold: 'rgba(0,0,0,0.19)',
