@@ -44,6 +44,7 @@ class IngredientListView extends Component {
       <SectionList
         style={styles.listContainer}
         sections={sections}
+        showsVerticalScrollIndicator={false}
         renderItem={item => this.renderItem(item)}
         renderSectionHeader={item => (
           <Text style={styles.ingredientCategoryHeader}>{item.section.title}</Text>
