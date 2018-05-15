@@ -8,10 +8,6 @@ export default StyleSheet.create({
     alignSelf: 'stretch',
     margin: 10,
     padding: 5,
-    shadowColor: brandColors.shadowColor,
-    shadowOpacity: 0.19,
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 4,
   },
   ingredientCell: {
     flex: 1,
@@ -22,6 +18,10 @@ export default StyleSheet.create({
     paddingRight: 16,
     borderBottomWidth: 1,
     borderColor: brandColors.borderColorBold,
+    shadowColor: brandColors.shadowColor,
+    shadowOpacity: 0.19,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 4,
   },
   ingredientCellFirst: {
     flex: 1,
@@ -34,6 +34,10 @@ export default StyleSheet.create({
     borderTopLeftRadius: 5,
     borderTopRightRadius: 5,
     borderColor: brandColors.borderColorBold,
+    shadowColor: brandColors.shadowColor,
+    shadowOpacity: 0.19,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 4,
   },
   ingredientCellLast: {
     flex: 1,
@@ -44,6 +48,10 @@ export default StyleSheet.create({
     paddingRight: 16,
     borderBottomLeftRadius: 5,
     borderBottomRightRadius: 5,
+    shadowColor: brandColors.shadowColor,
+    shadowOpacity: 0.19,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 4,
   },
   ingredientTitle: {
     fontSize: 18,
