@@ -8,21 +8,21 @@ import { getList } from './../../reducer';
 import styles from './IngredientListViewStyle';
 
 class IngredientListView extends Component {
-  componentDidMount() {
-    this.props.getList();
-  }
-
-  getCellStyle(rowIndex) {
+  static getCellStyle(rowIndex, sectionLength) {
     if (rowIndex === 0) {
       return styles.ingredientCellFirst;
-    } else if (rowIndex === this.props.list.listCategories[0].listIngredients.length - 1) {
+    } else if (rowIndex === sectionLength - 1) {
       return styles.ingredientCellLast;
     }
     return styles.ingredientCell;
   }
 
+  componentDidMount() {
+    this.props.getList();
+  }
+
   renderItem = row => (
-    <View style={this.getCellStyle(row.index)}>
+    <View style={IngredientListView.getCellStyle(row.index, row.section.data.length)}>
       <Text style={row.item.isChecked ? styles.ingredientTitleChecked : styles.ingredientTitle}>
         {row.item.title}
       </Text>
