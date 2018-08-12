@@ -89,6 +89,12 @@ export default StyleSheet.create({
   ingredientTopRow: {
     flexDirection: 'row',
   },
+  replacementRow: {
+    marginTop: 5,
+  },
+  replacementText: {
+    color: brandColors.secondaryTextColor,
+  },
   replacementCaret: {
     flex: 0.8,
     resizeMode: 'contain',

@@ -46,6 +46,9 @@ class IngredientListView extends Component {
         </TouchableOpacity>
       </View>
       <Text style={styles.ingredientSubtitle}>{row.item.amount}</Text>
+      <View style={row.item.isExpanded ? styles.replacementRow : styles.hidden}>
+        <Text style={styles.replacementText}>{'→ ' + row.item.replacement}</Text>
+      </View>
     </View>
   )
 

@@ -5,6 +5,7 @@ export default class ListIngredient {
     this.amountType = amountType;
     this.isChecked = isChecked;
     this.hasSubstitutes = hasSubstitutes;
+    this.replacement = "Soy Milk";
     this.isExpanded = false;
   }
 
