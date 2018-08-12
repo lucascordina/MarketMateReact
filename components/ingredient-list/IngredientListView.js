@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, SectionList, Text } from 'react-native';
+import { View, SectionList, Text, Image } from 'react-native';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 
@@ -23,9 +23,12 @@ class IngredientListView extends Component {
 
   renderItem = row => (
     <View style={IngredientListView.getCellStyle(row.index, row.section.data.length)}>
-      <Text style={row.item.isChecked ? styles.ingredientTitleChecked : styles.ingredientTitle}>
-        {row.item.title}
-      </Text>
+      <View style={styles.ingredientTopRow}>
+        <Text style={row.item.isChecked ? styles.ingredientTitleChecked : styles.ingredientTitle}>
+          {row.item.title}
+        </Text>
+        <Image source={require('../../assets/icons/carat-side.png')} style={styles.replacementCaret} />
+      </View>
       <Text style={styles.ingredientSubtitle}>{row.item.amount}</Text>
     </View>
   )
