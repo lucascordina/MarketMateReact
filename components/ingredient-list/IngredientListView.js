@@ -27,7 +27,7 @@ class IngredientListView extends Component {
         <Text style={row.item.isChecked ? styles.ingredientTitleChecked : styles.ingredientTitle}>
           {row.item.title}
         </Text>
-        <Image source={require('../../assets/icons/carat-side.png')} style={styles.replacementCaret} />
+        <Image source={require('../../assets/icons/carat-side.png')} style={row.item.hasSubstitutes ? styles.replacementCaret : styles.hiddenCaret} />
       </View>
       <Text style={styles.ingredientSubtitle}>{row.item.amount}</Text>
     </View>

@@ -96,5 +96,8 @@ export default StyleSheet.create({
     top: 10,
     height: 19,
     position: 'absolute',
+  },
+  hiddenCaret: {
+    display: 'none',
   }
 });
