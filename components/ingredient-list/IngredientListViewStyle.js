@@ -97,7 +97,15 @@ export default StyleSheet.create({
     height: 19,
     position: 'absolute',
   },
-  hiddenCaret: {
+  expandedCaret: {
+    flex: 0.8,
+    resizeMode: 'contain',
+    right: 8,
+    bottom: -68,
+    width: 19,
+    position: 'absolute',
+  },
+  hidden: {
     display: 'none',
   }
 });

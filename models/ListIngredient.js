@@ -5,9 +5,11 @@ export default class ListIngredient {
     this.amountType = amountType;
     this.isChecked = isChecked;
     this.hasSubstitutes = hasSubstitutes;
+    this.isExpanded = false;
   }
 
   getAmount() {
     return `${this.amount} ${this.amountType}`;
   }
+
 }

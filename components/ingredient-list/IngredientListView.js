@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, SectionList, Text, Image } from 'react-native';
+import { View, SectionList, Text, Image, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 
@@ -21,13 +21,29 @@ class IngredientListView extends Component {
     this.props.getList();
   }
 
+  ExpandIngredient(row) {
+    row.item.isExpanded = true;
+    this.forceUpdate();
+  }
+  
+  CollapseIngredient(row) {
+    row.item.isExpanded = false;
+    this.forceUpdate();
+  }
+
+
   renderItem = row => (
-    <View style={IngredientListView.getCellStyle(row.index, row.section.data.length)}>
+    <View style={IngredientListView.getCellStyle(row.index, row.section.data.length)} >
       <View style={styles.ingredientTopRow}>
         <Text style={row.item.isChecked ? styles.ingredientTitleChecked : styles.ingredientTitle}>
           {row.item.title}
         </Text>
-        <Image source={require('../../assets/icons/carat-side.png')} style={row.item.hasSubstitutes ? styles.replacementCaret : styles.hiddenCaret} />
+        <TouchableOpacity onPress={() => this.ExpandIngredient(row)} style={row.item.isExpanded ? styles.hidden : null}>
+          <Image source={require('../../assets/icons/caret-side.png')} style={row.item.hasSubstitutes ? styles.replacementCaret : styles.hidden} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => this.CollapseIngredient(row)} style={row.item.isExpanded ? null : styles.hidden}>
+          <Image source={require('../../assets/icons/caret-down.png')} style={styles.expandedCaret} />
+        </TouchableOpacity>
       </View>
       <Text style={styles.ingredientSubtitle}>{row.item.amount}</Text>
     </View>
