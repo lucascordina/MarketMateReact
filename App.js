@@ -1,8 +1,9 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist'
 import { PersistGate } from 'redux-persist/integration/react'
+import thunk from 'redux-thunk';
 import storage from 'redux-persist/lib/storage'
 import { Provider } from 'react-redux';
 
@@ -19,7 +20,7 @@ const persistConfig = {
 }
 
 const persistedReducer = persistReducer(persistConfig, reducer)
-const store = createStore(persistedReducer);
+const store = createStore(persistedReducer, applyMiddleware(thunk));
 const persistor = persistStore(store);
 
 const styles = StyleSheet.create({

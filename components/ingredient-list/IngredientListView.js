@@ -3,7 +3,7 @@ import { View, SectionList, Text, Image, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 
-import { getList } from './../../reducer';
+import { deleteList, populateDefaultList } from './../../actions';
 
 import styles from './IngredientListViewStyle';
 
@@ -18,7 +18,7 @@ class IngredientListView extends Component {
   }
 
   componentDidMount() {
-    this.props.getList();
+
   }
 
   ExpandIngredient(row) {
@@ -44,6 +44,12 @@ class IngredientListView extends Component {
         <TouchableOpacity onPress={() => this.CollapseIngredient(row)} style={row.item.isExpanded ? null : styles.hidden}>
           <Image source={require('../../assets/icons/caret-down.png')} style={styles.expandedCaret} />
         </TouchableOpacity>
+        <TouchableOpacity onPress={() => this.props.p_deleteList()}>
+          <Text>Delete this pls!!!!</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => this.props.p_populateDefaultList()}>
+          <Text>Recreate List!!!!</Text>
+        </TouchableOpacity>
       </View>
       <Text style={styles.ingredientSubtitle}>{row.item.amount}</Text>
       <View style={row.item.isExpanded ? styles.replacementRow : styles.hidden}>
@@ -63,31 +69,33 @@ class IngredientListView extends Component {
       sections.push(section);
     });
     return (
-      <SectionList
-        style={styles.listContainer}
-        sections={sections}
-        showsVerticalScrollIndicator={false}
-        renderItem={item => this.renderItem(item)}
-        renderSectionHeader={item => (
-          <Text style={styles.ingredientCategoryHeader}>{item.section.title}</Text>
-        )}
-        stickySectionHeadersEnabled={false}
-        keyExtractor={(item, index) => `ingredient-list-row-${index}`}
-      />
+        <SectionList
+          style={styles.listContainer}
+          sections={sections}
+          showsVerticalScrollIndicator={false}
+          renderItem={item => this.renderItem(item)}
+          renderSectionHeader={item => (
+            <Text style={styles.ingredientCategoryHeader}>{item.section.title}</Text>
+          )}
+          stickySectionHeadersEnabled={false}
+          keyExtractor={(item, index) => `ingredient-list-row-${index}`}
+        />
     );
   }
 }
 
 IngredientListView.propTypes = {
-  getList: PropTypes.func.isRequired,
   list: PropTypes.object.isRequired,
   sections: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 const mapStateToProps = state => ({ list: state.list, sections: [] });
 
-const mapDispatchToProps = {
-  getList,
-};
+function mapDispatchToProps(dispatch) {
+  return({
+    p_populateDefaultList: () => dispatch(populateDefaultList()),
+    p_deleteList: () => dispatch(deleteList())
+  })
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(IngredientListView);
