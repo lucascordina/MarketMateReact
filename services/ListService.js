@@ -1,5 +1,3 @@
-import { AsyncStorage } from "react-native";
-
 import ListIngredient from './../models/ListIngredient';
 import ListCategory from './../models/ListCategory';
 import AmountType from './../models/AmountType';

@@ -18,7 +18,6 @@ class IngredientListView extends Component {
   }
 
   componentDidMount() {
-
   }
 
   ExpandIngredient(row) {
@@ -30,7 +29,6 @@ class IngredientListView extends Component {
     row.item.isExpanded = false;
     this.forceUpdate();
   }
-
 
   renderItem = row => (
     <View style={IngredientListView.getCellStyle(row.index, row.section.data.length)} >
