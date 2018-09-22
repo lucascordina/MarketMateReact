@@ -1,0 +1,29 @@
+dependencies: \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Views/RCTMaskedViewManager.m \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Views/RCTMaskedViewManager.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Views/RCTViewManager.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTConvert.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Views/RCTAnimationType.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Views/RCTBorderStyle.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Views/RCTPointerEvents.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Views/RCTTextDecorationLineType.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTEventDispatcher.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Views/UIView+React.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Views/RCTComponent.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Views/RCTMaskedView.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Views/RCTView.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Modules/RCTUIManager.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTRootView.h

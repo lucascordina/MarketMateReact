@@ -1,0 +1,26 @@
+dependencies: \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTJavaScriptLoader.mm \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/JSBundleType.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTConvert.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Views/RCTAnimationType.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Views/RCTBorderStyle.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Views/RCTPointerEvents.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Views/RCTTextDecorationLineType.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTMultipartDataTask.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTMultipartStreamReader.h \
+  /Users/lucascordina/Documents/Apps/MarketMateReact/node_modules/react-native/React/Base/RCTPerformanceLogger.h

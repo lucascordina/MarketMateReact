@@ -81,7 +81,7 @@ class IngredientListView extends Component {
 IngredientListView.propTypes = {
   getList: PropTypes.func.isRequired,
   list: PropTypes.object.isRequired,
-  sections: PropTypes.object.isRequired,
+  sections: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 const mapStateToProps = state => ({ list: state.list, sections: [] });

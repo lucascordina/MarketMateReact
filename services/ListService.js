@@ -1,3 +1,5 @@
+import { AsyncStorage } from "react-native";
+
 import ListIngredient from './../models/ListIngredient';
 import ListCategory from './../models/ListCategory';
 import AmountType from './../models/AmountType';
@@ -19,8 +21,18 @@ function GenerateMockListCategories() {
   ];
 }
 
+function SaveList(list= List) {
+  try {
+   AsyncStorage.setItem(list.key, list);
+  } catch (error) {
+    //TODO: handle in firebase
+  }
+}
+
 export default class ListService {
   static GetDefaultList() {
     return new List('My List', GenerateMockListCategories());
   }
 }
+
+
