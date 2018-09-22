@@ -1,9 +1,10 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore } from 'redux';
+import { persistStore, persistReducer } from 'redux-persist'
+import { PersistGate } from 'redux-persist/integration/react'
+import storage from 'redux-persist/lib/storage'
 import { Provider } from 'react-redux';
-import axios from 'axios';
-import axiosMiddleware from 'redux-axios-middleware';
 
 import reducer from './reducer';
 
@@ -11,12 +12,15 @@ import HeaderView from './components/header/HeaderView';
 import IngredientListView from './components/ingredient-list/IngredientListView';
 import brandColors from './assets/styling/colors';
 
-const client = axios.create({
-  baseURL: 'https://api.github.com',
-  responseType: 'json',
-});
 
-const store = createStore(reducer, applyMiddleware(axiosMiddleware(client)));
+const persistConfig = {
+  key: 'root',
+  storage,
+}
+
+const persistedReducer = persistReducer(persistConfig, reducer)
+const store = createStore(persistedReducer);
+const persistor = persistStore(store);
 
 const styles = StyleSheet.create({
   container: {
@@ -34,10 +38,12 @@ export default class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <View style={styles.container}>
-          <HeaderView />
-          <IngredientListView />
-        </View>
+        <PersistGate loading={null} persistor={persistor}>
+            <View style={styles.container}>
+              <HeaderView />
+              <IngredientListView />
+            </View>
+          </PersistGate>
       </Provider>
     );
   }
