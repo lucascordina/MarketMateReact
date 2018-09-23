@@ -3,6 +3,7 @@ import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import style from './HeaderViewStyle';
+import { routes } from '../../AppNavigator';
 import brandColors from '../../assets/styling/colors';
 
 export default class HeaderView extends Component {
@@ -19,7 +20,7 @@ export default class HeaderView extends Component {
       <View style={style.header}>
         <Text style={style.headerText}>{this.state.currentListName}</Text>
         <TouchableOpacity style={style.addIngredientIcon} onPress={() => {
-                  this.props.navigation.navigate('SecondScreenTest')
+                  this.props.navigation.navigate(routes.addIngredientScreen)
               }} >
           <Icon name="ios-add" color={brandColors.iconColor} size={40} />
         </TouchableOpacity>
