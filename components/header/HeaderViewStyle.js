@@ -9,6 +9,7 @@ export default StyleSheet.create({
     backgroundColor: brandColors.primaryColor,
     height: 115,
     justifyContent: 'center',
+    padding: 0,
   },
   headerText: {
     alignSelf: 'center',

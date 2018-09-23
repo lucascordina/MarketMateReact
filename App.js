@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { createStore, applyMiddleware } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist'
 import { PersistGate } from 'redux-persist/integration/react'
@@ -8,10 +8,7 @@ import storage from 'redux-persist/lib/storage'
 import { Provider } from 'react-redux';
 
 import reducer from './reducer';
-
-import HeaderView from './components/header/HeaderView';
-import IngredientListView from './components/ingredient-list/IngredientListView';
-import brandColors from './assets/styling/colors';
+import AppNavigator from './AppNavigator';
 
 
 const persistConfig = {
@@ -24,14 +21,10 @@ const store = createStore(persistedReducer, applyMiddleware(thunk));
 const persistor = persistStore(store);
 
 const styles = StyleSheet.create({
-  container: {
+  stackView: {
     flex: 1,
-    backgroundColor: brandColors.defaultBackground,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  heading: {
-    fontSize: 42,
   },
 });
 
@@ -40,10 +33,7 @@ export default class App extends React.Component {
     return (
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-            <View style={styles.container}>
-              <HeaderView />
-              <IngredientListView />
-            </View>
+            <AppNavigator style={styles.stackView} />
           </PersistGate>
       </Provider>
     );
