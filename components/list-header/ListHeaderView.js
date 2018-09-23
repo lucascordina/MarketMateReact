@@ -19,14 +19,20 @@ export default class ListHeaderView extends Component {
     return (
       <View style={style.header}>
         <Text style={style.headerText}>{this.state.currentListName}</Text>
-        <TouchableOpacity style={style.menuIcon} onPress={() => {
+        <TouchableOpacity
+        style={style.menuIcon}
+        onPress={() => {
                   this.props.navigation.openDrawer()
-              }} >
+        }}
+        hitSlop={{top: 20, bottom: 20, left: 50, right: 50}}>
           <Icon name="ios-menu" color={brandColors.iconColor} size={35} />
         </TouchableOpacity>
-        <TouchableOpacity style={style.addIngredientIcon} onPress={() => {
-                  this.props.navigation.navigate(routes.addIngredientScreen)
-              }} >
+        <TouchableOpacity
+        style={style.addIngredientIcon}
+        onPress={() => {
+            this.props.navigation.navigate(routes.addIngredientScreen)
+        }}
+        hitSlop={{top: 20, bottom: 20, left: 50, right: 50}}>
           <Icon name="ios-add" color={brandColors.iconColor} size={40} />
         </TouchableOpacity>
       </View>

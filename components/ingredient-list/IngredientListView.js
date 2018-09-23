@@ -36,11 +36,17 @@ class IngredientListView extends Component {
         <Text style={row.item.isChecked ? styles.ingredientTitleChecked : styles.ingredientTitle}>
           {row.item.title}
         </Text>
-        <TouchableOpacity onPress={() => this.ExpandIngredient(row)} style={row.item.isExpanded ? styles.hidden : null}>
-          <Image source={require('../../assets/icons/caret-side.png')} style={row.item.hasSubstitutes ? styles.replacementCaret : styles.hidden} />
+        <TouchableOpacity
+          onPress={() => this.ExpandIngredient(row)}
+          style={row.item.isExpanded ? styles.hidden : null}
+          hitSlop={{top: 30, bottom: 30, left: 50, right: 50}}>
+            <Image source={require('../../assets/icons/caret-side.png')} style={row.item.hasSubstitutes ? styles.replacementCaret : styles.hidden} />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.CollapseIngredient(row)} style={row.item.isExpanded ? null : styles.hidden}>
-          <Image source={require('../../assets/icons/caret-down.png')} style={styles.expandedCaret} />
+        <TouchableOpacity
+          onPress={() => this.CollapseIngredient(row)}
+          style={row.item.isExpanded ? null : styles.hidden}
+          hitSlop={{top: 30, bottom: 30, left: 50, right: 50}}>
+            <Image source={require('../../assets/icons/caret-down.png')} style={styles.expandedCaret} />
         </TouchableOpacity>
       </View>
       <Text style={styles.ingredientSubtitle}>{row.item.amount}</Text>

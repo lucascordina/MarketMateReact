@@ -124,5 +124,5 @@ export default StyleSheet.create({
   },
   hidden: {
     display: 'none',
-  }
+  },
 });

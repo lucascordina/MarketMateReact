@@ -15,9 +15,12 @@ export default class AddIngredientHeaderView extends Component {
     return (
       <View style={style.header}>
         <Text style={style.headerText}>Add Ingredient</Text>
-        <TouchableOpacity style={style.addIngredientIcon} onPress={() => {
-                    this.props.navigation.navigate(routes.homeScreen)
-                }} >
+        <TouchableOpacity
+          style={style.addIngredientIcon}
+          onPress={() => {
+              this.props.navigation.navigate(routes.homeScreen)
+          }}
+          hitSlop={{top: 20, bottom: 20, left: 50, right: 50}}>
             <Icon name="ios-arrow-back" color={brandColors.iconColor} size={32} />
         </TouchableOpacity>
       </View>
