@@ -19,6 +19,11 @@ export default class ListHeaderView extends Component {
     return (
       <View style={style.header}>
         <Text style={style.headerText}>{this.state.currentListName}</Text>
+        <TouchableOpacity style={style.menuIcon} onPress={() => {
+                  this.props.navigation.navigate(routes.addIngredientScreen)
+              }} >
+          <Icon name="ios-menu" color={brandColors.iconColor} size={35} />
+        </TouchableOpacity>
         <TouchableOpacity style={style.addIngredientIcon} onPress={() => {
                   this.props.navigation.navigate(routes.addIngredientScreen)
               }} >

@@ -15,14 +15,17 @@ export default StyleSheet.create({
     alignSelf: 'center',
     color: brandColors.headingTextColor,
     fontSize: 22,
-    marginTop: 30,
     position: 'relative',
-    top: 24,
+    top: 15,
   },
   addIngredientIcon: {
-    alignSelf: 'flex-end',
-    position: 'relative',
-    top: -9,
-    right: 20,
+    position: 'absolute',
+    top: 39,
+    right: 32,
+  },
+  menuIcon: {
+    position: 'absolute',
+    top: 40,
+    left: 31,
   }
 });
