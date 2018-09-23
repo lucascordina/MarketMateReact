@@ -14,7 +14,7 @@ export default class AddIngredientHeaderView extends Component {
   render() {
     return (
       <View style={style.header}>
-        <Text style={style.headerText}>{this.state.currentListName}</Text>
+        <Text style={style.headerText}>Add Ingredient</Text>
         <TouchableOpacity style={style.addIngredientIcon} onPress={() => {
                     this.props.navigation.navigate(routes.homeScreen)
                 }} >

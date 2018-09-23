@@ -1,5 +1,4 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import { DrawerNavigator } from 'react-navigation';
 
 import Home from './screens/home';
@@ -29,20 +28,5 @@ const AppNavigator = DrawerNavigator({
       <MainDrawerContentView navigation={props.navigation} />
     )
   });
-
-// const AppNavigator = createStackNavigator({
-//     Home: { 
-//         screen: Home,
-//         navigationOptions: () => ({
-//             header: null
-//         })
-//      },
-//      AddIngredient: {
-//          screen: AddIngredientScreen,
-//          navigationOptions: () => ({
-//              header: null
-//          })
-//      },
-// })
 
 export default AppNavigator;
