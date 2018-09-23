@@ -3,6 +3,10 @@ import { StyleSheet } from 'react-native';
 import brandColors from '../../assets/styling/colors';
 
 export default StyleSheet.create({
+  ingredientListRoot: {
+    flex: 1,
+    alignSelf: 'stretch',
+  },
   listContainer: {
     flex: 1,
     alignSelf: 'stretch',
@@ -10,6 +14,16 @@ export default StyleSheet.create({
     marginBottom: 35,
     marginTop: 10,
     padding: 5,
+  },
+  hidden: {
+    display: 'none',
+  },
+  emptyListDescription: {
+    fontSize: 22,
+    fontWeight: '400',
+    justifyContent: 'center',
+    textAlign: 'center',
+    marginTop: 40,
   },
   ingredientCell: {
     flex: 1,

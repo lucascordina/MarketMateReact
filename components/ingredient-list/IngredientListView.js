@@ -42,12 +42,6 @@ class IngredientListView extends Component {
         <TouchableOpacity onPress={() => this.CollapseIngredient(row)} style={row.item.isExpanded ? null : styles.hidden}>
           <Image source={require('../../assets/icons/caret-down.png')} style={styles.expandedCaret} />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.props.p_deleteList()}>
-          <Text>Delete this pls!!!!</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.props.p_populateDefaultList()}>
-          <Text>Recreate List!!!!</Text>
-        </TouchableOpacity>
       </View>
       <Text style={styles.ingredientSubtitle}>{row.item.amount}</Text>
       <View style={row.item.isExpanded ? styles.replacementRow : styles.hidden}>
@@ -66,9 +60,11 @@ class IngredientListView extends Component {
       };
       sections.push(section);
     });
+
     return (
+      <View style={styles.ingredientListRoot}>
         <SectionList
-          style={styles.listContainer}
+          style={sections.length > 0 ? styles.listContainer : styles.hidden}
           sections={sections}
           showsVerticalScrollIndicator={false}
           renderItem={item => this.renderItem(item)}
@@ -78,6 +74,11 @@ class IngredientListView extends Component {
           stickySectionHeadersEnabled={false}
           keyExtractor={(item, index) => `ingredient-list-row-${index}`}
         />
+        <Text style={sections.length > 0 ? styles.hidden : styles.emptyListDescription }>
+          Oh no!{"\n"}
+          Your list is empty :(
+        </Text>
+      </View>
     );
   }
 }
