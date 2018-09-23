@@ -9,7 +9,7 @@ export default class Home extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-              <HeaderView />
+              <HeaderView navigation={this.props.navigation} />
               <IngredientListView />
               <Button title="navigate, don't hate" onPress={() => {
                   this.props.navigation.navigate('SecondScreenTest')

@@ -5,9 +5,9 @@ import brandColors from '../../assets/styling/colors';
 export default StyleSheet.create({
   header: {
     alignSelf: 'stretch',
-    alignItems: 'center',
+    alignItems: 'stretch',
     backgroundColor: brandColors.primaryColor,
-    height: 115,
+    height: 85,
     justifyContent: 'center',
     padding: 0,
   },
@@ -16,16 +16,13 @@ export default StyleSheet.create({
     color: brandColors.headingTextColor,
     fontSize: 22,
     marginTop: 30,
+    position: 'relative',
+    top: 24,
   },
-  searchBar: {
-    height: 31,
-    width: 329,
-    backgroundColor: 'white',
-    borderRadius: 3,
-    marginTop: 7,
-    paddingLeft: 10,
-    paddingRight: 10,
-    borderColor: brandColors.borderColor,
-    borderWidth: 1.5,
-  },
+  addIngredientIcon: {
+    alignSelf: 'flex-end',
+    marginRight: 18,
+    position: 'relative',
+    top: -9
+  }
 });

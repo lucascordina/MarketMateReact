@@ -6,6 +6,8 @@ const brandColors = {
   primaryTextColor: '#343434',
   secondaryTextColor: '#6F6F6F',
 
+  iconColor: '#fff',
+
   borderColor: '#ddd',
   borderColorBold: 'rgba(0,0,0,0.19)',
   cellColor: '#fff',

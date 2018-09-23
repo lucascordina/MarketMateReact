@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import style from './HeaderViewStyle';
+import brandColors from '../../assets/styling/colors';
 
 export default class HeaderView extends Component {
   constructor() {
@@ -16,11 +18,11 @@ export default class HeaderView extends Component {
     return (
       <View style={style.header}>
         <Text style={style.headerText}>{this.state.currentListName}</Text>
-        <TextInput
-          style={style.searchBar}
-          value={this.state.searchValue}
-          onChangeText={text => this.setState({ currentListName: text })}
-        />
+        <TouchableOpacity style={style.addIngredientIcon} onPress={() => {
+                  this.props.navigation.navigate('SecondScreenTest')
+              }} >
+          <Icon name="ios-add" color={brandColors.iconColor} size={40} />
+        </TouchableOpacity>
       </View>
     );
   }
