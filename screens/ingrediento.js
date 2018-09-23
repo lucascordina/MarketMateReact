@@ -1,19 +1,16 @@
 import React from 'react';
-import { StyleSheet, View, Button } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import brandColors from '../assets/styling/colors';
 import HeaderView from '../components/header/HeaderView';
-import IngredientListView from '../components/ingredient-list/IngredientListView';
+import IngredientListViewO from '../components/ingrediento-listo/IngredientListView';
 
-export default class Home extends React.Component {
+export default class Homie extends React.Component {
     render() {
         return (
             <View style={styles.container}>
               <HeaderView />
-              <IngredientListView />
-              <Button title="navigate, don't hate" onPress={() => {
-                  this.props.navigation.navigate('SecondScreenTest')
-              }} />
+              <IngredientListViewO />
             </View>
         );
     }

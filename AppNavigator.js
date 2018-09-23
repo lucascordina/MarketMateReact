@@ -1,6 +1,7 @@
 import { createStackNavigator } from 'react-navigation';
 
 import Home from './screens/home';
+import Homie from './screens/ingrediento';
 
 const AppNavigator = createStackNavigator({
     Home: { 
@@ -9,9 +10,12 @@ const AppNavigator = createStackNavigator({
             header: null
         })
      },
+     SecondScreenTest: {
+         screen: Homie,
+         navigationOptions: () => ({
+             header: null
+         })
+     },
 })
-
-AppNavigator.navigationOptions = { header: null };
-console.log(AppNavigator.navigationOptions);
 
 export default AppNavigator;
