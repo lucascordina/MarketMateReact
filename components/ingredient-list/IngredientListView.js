@@ -3,7 +3,7 @@ import { View, SectionList, Text, Image, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 
-import { deleteList, populateDefaultList } from './../../actions';
+import { deleteList, populateDefaultList } from '../../actions';
 
 import styles from './IngredientListViewStyle';
 

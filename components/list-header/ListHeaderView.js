@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import style from './HeaderViewStyle';
+import style from './ListHeaderViewStyle';
 import { routes } from '../../AppNavigator';
 import brandColors from '../../assets/styling/colors';
 
-export default class HeaderView extends Component {
+export default class ListHeaderView extends Component {
   constructor() {
     super();
     this.state = {

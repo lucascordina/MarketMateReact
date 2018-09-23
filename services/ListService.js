@@ -1,7 +1,7 @@
-import ListIngredient from './../models/ListIngredient';
-import ListCategory from './../models/ListCategory';
-import AmountType from './../models/AmountType';
-import List from './../models/List';
+import ListIngredient from '../models/ListIngredient';
+import ListCategory from '../models/ListCategory';
+import AmountType from '../models/AmountType';
+import List from '../models/List';
 
 function GenerateMockIngredients() {
   return [

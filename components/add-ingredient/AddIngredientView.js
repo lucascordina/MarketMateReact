@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+import { View } from 'react-native';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 
-import { deleteList, populateDefaultList } from './../../actions';
+import { deleteList, populateDefaultList } from '../../actions';
+
+import styles from './AddIngredientViewStyle';
 
 class AddIngredientView extends Component {
 
@@ -21,9 +23,8 @@ class AddIngredientView extends Component {
       sections.push(section);
     });
     return (
-        <Text>
-          Professor Toasty
-          </Text>
+        <View style={styles.addIngredientContainer}>
+        </View>
     );
   }
 }
