@@ -21,8 +21,8 @@ export default StyleSheet.create({
   },
   addIngredientIcon: {
     alignSelf: 'flex-end',
-    marginRight: 18,
     position: 'relative',
-    top: -9
+    top: -9,
+    right: 20,
   }
 });

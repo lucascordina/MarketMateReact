@@ -22,7 +22,7 @@ export default class AddIngredientHeaderView extends Component {
         <TouchableOpacity style={style.addIngredientIcon} onPress={() => {
                     this.props.navigation.navigate(routes.homeScreen)
                 }} >
-            <Icon name="ios-arrow-back" color={brandColors.iconColor} size={40} />
+            <Icon name="ios-arrow-back" color={brandColors.iconColor} size={32} />
         </TouchableOpacity>
       </View>
     );
