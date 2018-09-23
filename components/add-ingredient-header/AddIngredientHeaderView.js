@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import style from './AddIngredientHeaderViewStyle';
@@ -9,10 +9,6 @@ import brandColors from '../../assets/styling/colors';
 export default class AddIngredientHeaderView extends Component {
   constructor() {
     super();
-    this.state = {
-      currentListName: 'Add Ingredient',
-      searchValue: '',
-    };
   }
 
   render() {
