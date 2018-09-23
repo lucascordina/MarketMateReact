@@ -5,7 +5,7 @@ import { PropTypes } from 'prop-types';
 
 import { deleteList, populateDefaultList } from './../../actions';
 
-class IngredientListViewO extends Component {
+class AddIngredientView extends Component {
 
   componentDidMount() {
   }
@@ -28,7 +28,7 @@ class IngredientListViewO extends Component {
   }
 }
 
-IngredientListViewO.propTypes = {
+AddIngredientView.propTypes = {
   list: PropTypes.object.isRequired,
   sections: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
@@ -42,4 +42,4 @@ function mapDispatchToProps(dispatch) {
   })
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(IngredientListViewO);
+export default connect(mapStateToProps, mapDispatchToProps)(AddIngredientView);

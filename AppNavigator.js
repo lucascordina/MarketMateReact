@@ -1,7 +1,7 @@
 import { createStackNavigator } from 'react-navigation';
 
 import Home from './screens/home';
-import Homie from './screens/ingrediento';
+import AddIngredientScreen from './screens/add-ingredient';
 
 export const routes = {
     homeScreen: 'Home',
@@ -16,7 +16,7 @@ const AppNavigator = createStackNavigator({
         })
      },
      AddIngredient: {
-         screen: Homie,
+         screen: AddIngredientScreen,
          navigationOptions: () => ({
              header: null
          })
