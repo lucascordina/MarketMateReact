@@ -18,13 +18,6 @@ export default StyleSheet.create({
   hidden: {
     display: 'none',
   },
-  emptyListDescription: {
-    fontSize: 22,
-    fontWeight: '400',
-    justifyContent: 'center',
-    textAlign: 'center',
-    marginTop: 40,
-  },
   ingredientCell: {
     flex: 1,
     backgroundColor: brandColors.cellColor,
@@ -124,5 +117,26 @@ export default StyleSheet.create({
   },
   hidden: {
     display: 'none',
+  },
+
+  emptyListContainer: {
+    flex:1,
+    alignSelf: 'stretch',
+    backgroundColor: brandColors.primaryColor,
+  },
+  emptyListImage: {
+    flex: 0.4,
+    width: null,
+    height: null,
+    resizeMode: 'contain',
+    marginTop: 100,
+  },
+  emptyListDescription: {
+    fontSize: 22,
+    fontWeight: '400',
+    justifyContent: 'center',
+    textAlign: 'center',
+    marginTop: 40,
+    color: '#fff',
   },
 });

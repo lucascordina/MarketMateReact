@@ -80,10 +80,17 @@ class IngredientListView extends Component {
           stickySectionHeadersEnabled={false}
           keyExtractor={(item, index) => `ingredient-list-row-${index}`}
         />
-        <Text style={sections.length > 0 ? styles.hidden : styles.emptyListDescription }>
-          Oh no!{"\n"}
-          Your list is empty :(
-        </Text>
+
+        <View style={sections.length > 0 ? styles.hidden : styles.emptyListContainer }>
+        <Image
+            style={styles.emptyListImage}
+            source={require('../../assets/illustrations/muffin-tasting.png')}
+          />
+          <Text style={styles.emptyListDescription} >
+            Every good muffin...{"\n"}
+            starts with a trip to the store
+          </Text>
+        </View>
       </View>
     );
   }
