@@ -2,12 +2,17 @@ import React, { Component } from 'react';
 import { View, SectionList, Text, Image, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
+import { Font } from 'expo';
 
 import { deleteList, populateDefaultList } from '../../actions';
 
 import styles from './IngredientListViewStyle';
 
 class IngredientListView extends Component {
+  state = {
+    fontLoaded: false,
+  };
+
   static getCellStyle(rowIndex, sectionLength) {
     if (rowIndex === 0) {
       return styles.ingredientCellFirst;
@@ -15,9 +20,16 @@ class IngredientListView extends Component {
       return styles.ingredientCellLast;
     }
     return styles.ingredientCell;
- } 
+  }
 
-  componentDidMount() {
+  async componentDidMount() {
+    console.log('ey starting load');
+    await Font.loadAsync({
+        'Pacifico Regular': require('../../assets/fonts/Pacifico.ttf'),
+      });
+    
+      console.log('ey loaded');
+    this.setState({ fontLoaded: true });
   }
 
   ExpandIngredient(row) {
@@ -86,10 +98,20 @@ class IngredientListView extends Component {
             style={styles.emptyListImage}
             source={require('../../assets/illustrations/muffin-tasting.png')}
           />
-          <Text style={styles.emptyListDescription} >
+          {/* <Text style={styles.emptyListDescription} >
             The perfect muffin...{"\n"}
             starts with a trip to the store
-          </Text>
+          </Text> */}
+          <View>
+            {
+              this.state.fontLoaded ? (
+                <Text style={styles.emptyListDescription}>
+                  The perfect muffin...{"\n"}
+                  starts with a trip to the store
+                </Text>
+              ) : null
+            }
+          </View>
         </View>
       </View>
     );

@@ -43,5 +43,10 @@
     "redux-axios-middleware": "^4.0.0",
     "redux-persist": "^5.10.0",
     "redux-thunk": "^2.3.0"
+  },
+  "rnpm": {
+    "assets": [
+      "./assets/fonts/"
+    ]
   }
 }

@@ -132,11 +132,14 @@ export default StyleSheet.create({
     marginTop: 90,
   },
   emptyListDescription: {
-    fontSize: 22,
+    fontFamily: 'Pacifico Regular',
+    fontSize: 30,
     fontWeight: '400',
     justifyContent: 'center',
     textAlign: 'center',
     marginTop: 40,
+    marginLeft: 15,
+    marginRight: 15,
     color: '#fff',
   },
 });
