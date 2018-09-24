@@ -23,12 +23,10 @@ class IngredientListView extends Component {
   }
 
   async componentDidMount() {
-    console.log('ey starting load');
     await Font.loadAsync({
         'Pacifico Regular': require('../../assets/fonts/Pacifico.ttf'),
       });
     
-      console.log('ey loaded');
     this.setState({ fontLoaded: true });
   }
 
