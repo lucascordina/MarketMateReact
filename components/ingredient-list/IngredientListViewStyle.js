@@ -125,11 +125,11 @@ export default StyleSheet.create({
     backgroundColor: brandColors.primaryColor,
   },
   emptyListImage: {
-    flex: 0.4,
+    flex: 0.55 ,
     width: null,
     height: null,
     resizeMode: 'contain',
-    marginTop: 100,
+    marginTop: 90,
   },
   emptyListDescription: {
     fontSize: 22,

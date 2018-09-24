@@ -15,7 +15,7 @@ class IngredientListView extends Component {
       return styles.ingredientCellLast;
     }
     return styles.ingredientCell;
-  }
+ } 
 
   componentDidMount() {
   }
@@ -87,7 +87,7 @@ class IngredientListView extends Component {
             source={require('../../assets/illustrations/muffin-tasting.png')}
           />
           <Text style={styles.emptyListDescription} >
-            Every good muffin...{"\n"}
+            The perfect muffin...{"\n"}
             starts with a trip to the store
           </Text>
         </View>
