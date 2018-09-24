@@ -98,16 +98,12 @@ class IngredientListView extends Component {
             style={styles.emptyListImage}
             source={require('../../assets/illustrations/muffin-tasting.png')}
           />
-          {/* <Text style={styles.emptyListDescription} >
-            The perfect muffin...{"\n"}
-            starts with a trip to the store
-          </Text> */}
           <View>
             {
               this.state.fontLoaded ? (
                 <Text style={styles.emptyListDescription}>
                   The perfect muffin...{"\n"}
-                  starts with a trip to the store
+                  starts with a trip to the store.
                 </Text>
               ) : null
             }

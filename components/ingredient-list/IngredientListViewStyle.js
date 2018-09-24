@@ -129,7 +129,8 @@ export default StyleSheet.create({
     width: null,
     height: null,
     resizeMode: 'contain',
-    marginTop: 90,
+    marginTop: 50,
+    marginBottom: 50,
   },
   emptyListDescription: {
     fontFamily: 'Pacifico Regular',
@@ -137,7 +138,6 @@ export default StyleSheet.create({
     fontWeight: '400',
     justifyContent: 'center',
     textAlign: 'center',
-    marginTop: 40,
     marginLeft: 15,
     marginRight: 15,
     color: '#fff',
