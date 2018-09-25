@@ -1,5 +1,5 @@
 import React from 'react';
-import { createDrawerNavigator } from 'react-navigation';
+import { createDrawerNavigator, createStackNavigator } from 'react-navigation';
 
 import Home from './screens/home';
 import AddIngredientScreen from './screens/add-ingredient';
@@ -10,7 +10,7 @@ export const routes = {
     addIngredientScreen: 'AddIngredient',
 };
 
-const AppNavigator = createDrawerNavigator({
+const router = createStackNavigator({
     Home: { 
         screen: Home,
         navigationOptions: () => ({
@@ -19,6 +19,16 @@ const AppNavigator = createDrawerNavigator({
     },
     AddIngredient: {
         screen: AddIngredientScreen,
+        navigationOptions: () => ({
+            header: null
+        })
+    },
+  }
+);
+
+const AppNavigator = createDrawerNavigator({
+    Home: { 
+        screen: router,
         navigationOptions: () => ({
             header: null
         })
