@@ -2,16 +2,13 @@ import React, { Component } from 'react';
 import { View, SectionList, Text, Image, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { Font } from 'expo';
 
 import { deleteList, populateDefaultList } from '../../actions';
+import PlaceHolderRandomizerView from '../placeholder-randomizer/PlaceHolderRandomizerView';
 
 import styles from './IngredientListViewStyle';
 
 class IngredientListView extends Component {
-  state = {
-    fontLoaded: false,
-  };
 
   static getCellStyle(rowIndex, sectionLength) {
     if (rowIndex === 0) {
@@ -23,11 +20,6 @@ class IngredientListView extends Component {
   }
 
   async componentDidMount() {
-    await Font.loadAsync({
-        'Pacifico Regular': require('../../assets/fonts/Pacifico.ttf'),
-      });
-    
-    this.setState({ fontLoaded: true });
   }
 
   ExpandIngredient(row) {
@@ -90,23 +82,13 @@ class IngredientListView extends Component {
           stickySectionHeadersEnabled={false}
           keyExtractor={(item, index) => `ingredient-list-row-${index}`}
         />
-
-        <View style={sections.length > 0 ? styles.hidden : styles.emptyListContainer }>
-        <Image
-            style={styles.emptyListImage}
-            source={require('../../assets/illustrations/muffin-tasting.png')}
-          />
-          <View>
-            {
-              this.state.fontLoaded ? (
-                <Text style={styles.emptyListDescription}>
-                  The perfect muffin...{"\n"}
-                  starts with a trip to the store.
-                </Text>
-              ) : null
-            }
-          </View>
-        </View>
+        {
+          sections.length <= 0 ? 
+            (
+            <PlaceHolderRandomizerView />
+            )
+            : null
+        }
       </View>
     );
   }

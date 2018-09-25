@@ -118,28 +118,4 @@ export default StyleSheet.create({
   hidden: {
     display: 'none',
   },
-
-  emptyListContainer: {
-    flex:1,
-    alignSelf: 'stretch',
-    backgroundColor: brandColors.primaryColor,
-  },
-  emptyListImage: {
-    flex: 0.55 ,
-    width: null,
-    height: null,
-    resizeMode: 'contain',
-    marginTop: 50,
-    marginBottom: 50,
-  },
-  emptyListDescription: {
-    fontFamily: 'Pacifico Regular',
-    fontSize: 30,
-    fontWeight: '400',
-    justifyContent: 'center',
-    textAlign: 'center',
-    marginLeft: 15,
-    marginRight: 15,
-    color: '#fff',
-  },
 });
