@@ -16,7 +16,8 @@ export default StyleSheet.create({
     color: brandColors.headingTextColor,
     fontSize: 22,
     position: 'relative',
-    top: 15,
+    fontFamily: 'Arimo Regular',
+    top: 17,
   },
   addIngredientIcon: {
     position: 'absolute',
