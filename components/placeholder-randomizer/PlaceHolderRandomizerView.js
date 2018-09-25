@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {View, Text, Image } from 'react-native';
-import { Font } from 'expo';
+import { Font, LinearGradient } from 'expo';
 
 import  brandColors from '../../assets/styling/colors';
 
@@ -43,15 +43,19 @@ export default class PlaceHolderRandomizerView extends Component {
         return (
             this.state.fontLoaded ? (
                 <View style={this.styles.emptyListContainer}>
-                    <Image
-                        style={this.styles.emptyListImage}
-                        source={this.state.loadedImage}
-                    />
-                    <View>
-                        <Text style={this.styles.emptyListDescription}>
-                            {this.state.loadedText}
-                        </Text>
-                    </View>
+                    <LinearGradient
+                        colors={brandColors.fourStepGradient}
+                        style={{ alignItems: 'center', flex:1 }}>
+                        <Image
+                            style={this.styles.emptyListImage}
+                            source={this.state.loadedImage}
+                        />
+                        <View>
+                            <Text style={this.styles.emptyListDescription}>
+                                {this.state.loadedText}
+                            </Text>
+                        </View>
+                    </LinearGradient>
                 </View>
             ) : null
         )
@@ -65,8 +69,7 @@ export default class PlaceHolderRandomizerView extends Component {
           },
           emptyListImage: {
             flex: 0.7 ,
-            width: null,
-            height: null,
+            width:'90%',
             resizeMode: 'contain',
             marginTop: 50,
             marginBottom: 50,

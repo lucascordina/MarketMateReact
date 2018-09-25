@@ -6,6 +6,8 @@ const brandColors = {
   primaryTextColor: '#343434',
   secondaryTextColor: '#6F6F6F',
 
+  fourStepGradient: [ '#42A5F5', '#298CDC', '#2980B9', '#1A74C1' ],
+
   iconColor: '#fff',
 
   borderColor: '#ddd',
