@@ -16,7 +16,7 @@ export default StyleSheet.create({
     color: brandColors.headingTextColor,
     fontSize: 22,
     position: 'relative',
-    fontFamily: 'Arimo Regular',
+    fontFamily: 'Pacifico Regular',
     top: 17,
   },
   addIngredientIcon: {

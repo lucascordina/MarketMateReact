@@ -10,7 +10,7 @@ import brandColors from '../../assets/styling/colors';
 export default class ListHeaderView extends Component {
 
   state = {
-    currentListName: 'My List',
+    currentListName: 'Market Mate',
     searchValue: '',
     fontLoaded: false,
   };
@@ -18,6 +18,7 @@ export default class ListHeaderView extends Component {
   async componentDidMount() {
     await Font.loadAsync({
       'Arimo Regular': require('../../assets/fonts/Arimo-Regular.ttf'),
+      'Pacifico Regular': require('../../assets/fonts/Pacifico.ttf'),
     })
 
     this.setState({ fontLoaded: true });
