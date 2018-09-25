@@ -26,8 +26,8 @@ export default class PlaceHolderRandomizerView extends Component {
                 return (
                     <View style={this.styles.emptyListContainer}>
                         <Image
-                                style={this.styles.emptyListImage}
-                                source={require('../../assets/illustrations/muffin-tasting.png')}
+                            style={this.styles.emptyListImage}
+                            source={require('../../assets/illustrations/muffin-tasting.png')}
                         />
                         <View>
                             <Text style={this.styles.emptyListDescription}>
@@ -37,17 +37,32 @@ export default class PlaceHolderRandomizerView extends Component {
                         </View>
                     </View>
                 );
-            default:
+            case 2:
                 return (
                     <View style={this.styles.emptyListContainer}>
                         <Image
-                                style={this.styles.emptyListImage}
-                                source={require('../../assets/illustrations/muffin-tasting.png')}
+                            style={this.styles.emptyListImage}
+                            source={require('../../assets/illustrations/eating-together.png')}
                         />
                         <View>
                             <Text style={this.styles.emptyListDescription}>
-                                The perfect muffin...{"\n"}
-                                starts with a trip to the store.
+                                What nicer thing can you do for somebody...{"\n"}
+                                than making them breakfast?
+                            </Text>
+                        </View>
+                    </View>
+                );
+            case 3:
+                return (
+                    <View style={this.styles.emptyListContainer}>
+                        <Image
+                            style={this.styles.emptyListImage}
+                            source={require('../../assets/illustrations/todo-list.png')}
+                        />
+                        <View>
+                            <Text style={this.styles.emptyListDescription}>
+                                Listen to your gut...{"\n"}
+                                and then write down its wishlist.
                             </Text>
                         </View>
                     </View>
