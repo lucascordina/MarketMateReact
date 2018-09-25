@@ -17,25 +17,47 @@ export default class PlaceHolderRandomizerView extends Component {
         this.setState({ fontLoaded: true });
     }
 
-    render() {
+    renderRandomImage() {
+        //Randomize a number between 1 and 3 to be used to randomize the image picked
+        //Must be increased with each image added.
+        //TODO: find less maintenance prone way of doing this using length of choices.
+        switch(Math.floor(Math.random() * 3) + 1){
+            case 1:
+                return (
+                    <View style={this.styles.emptyListContainer}>
+                        <Image
+                                style={this.styles.emptyListImage}
+                                source={require('../../assets/illustrations/muffin-tasting.png')}
+                        />
+                        <View>
+                            <Text style={this.styles.emptyListDescription}>
+                                The perfect muffin...{"\n"}
+                                starts with a trip to the store.
+                            </Text>
+                        </View>
+                    </View>
+                );
+            default:
+                return (
+                    <View style={this.styles.emptyListContainer}>
+                        <Image
+                                style={this.styles.emptyListImage}
+                                source={require('../../assets/illustrations/muffin-tasting.png')}
+                        />
+                        <View>
+                            <Text style={this.styles.emptyListDescription}>
+                                The perfect muffin...{"\n"}
+                                starts with a trip to the store.
+                            </Text>
+                        </View>
+                    </View>
+                );
+        }
+    }
 
+    render() {
         return (
-        <View style={this.styles.emptyListContainer}>
-            <Image
-                style={this.styles.emptyListImage}
-                source={require('../../assets/illustrations/muffin-tasting.png')}
-            />
-            <View>
-                {
-                this.state.fontLoaded ? (
-                    <Text style={this.styles.emptyListDescription}>
-                    The perfect muffin...{"\n"}
-                    starts with a trip to the store.
-                    </Text>
-                ) : null
-                }
-          </View>
-        </View>
+            this.state.fontLoaded ? (this.renderRandomImage()) : null
         )
     }
 
