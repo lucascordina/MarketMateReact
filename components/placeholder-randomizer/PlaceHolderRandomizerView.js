@@ -1,25 +1,20 @@
 import React, { Component } from 'react';
 import { Animated, View, Text, Image } from 'react-native';
-import { Font, LinearGradient } from 'expo';
+import { LinearGradient } from 'expo';
 
-import  brandColors from '../../assets/styling/colors';
+import brandColors from '../../assets/styling/colors';
+import brandFonts from '../../assets/styling/fonts';
 
 export default class PlaceHolderRandomizerView extends Component {
     state = {
-        fontLoaded: false,
         loadedImage :'',
         loadedText: '',
         fadeAnim: new Animated.Value(0),
+        componentReady: false,
     };
 
     async componentDidMount() {
         this.randomizeLoadedImage();
-
-        await Font.loadAsync({
-            'Pacifico Regular': require('../../assets/fonts/Pacifico.ttf'),
-        });
-
-        this.setState({ fontLoaded: true });
 
         Animated.timing(                  // Animate over time
             this.state.fadeAnim,            // The animated value to drive
@@ -28,6 +23,8 @@ export default class PlaceHolderRandomizerView extends Component {
               duration: 600,              // Make it take a while
             }
           ).start();
+
+        this.setState({ componentReady: true });
     }
 
     randomizeLoadedImage() {
@@ -49,11 +46,10 @@ export default class PlaceHolderRandomizerView extends Component {
     }
 
     render() {
-
         let { fadeAnim } = this.state;
-
+        
         return (
-            this.state.fontLoaded ? (
+            this.state.componentReady ? (
                 <View style={this.styles.emptyListContainer}>
                     <Animated.View                 // Special animatable View
                             style={{
@@ -80,6 +76,7 @@ export default class PlaceHolderRandomizerView extends Component {
         )
     }
 
+    //styles must be self contained due to spread operator
     styles = {
         emptyListContainer: {
             flex:1,
@@ -94,7 +91,7 @@ export default class PlaceHolderRandomizerView extends Component {
             marginBottom: 50,
           },
           emptyListDescription: {
-            fontFamily: 'Pacifico Regular',
+            fontFamily: brandFonts.displayFont,
             fontSize: 30,
             fontWeight: '400',
             justifyContent: 'center',
@@ -102,6 +99,7 @@ export default class PlaceHolderRandomizerView extends Component {
             marginLeft: 15,
             marginRight: 15,
             color: '#fff',
-          },
-    }
+        },
+    };
+
 }

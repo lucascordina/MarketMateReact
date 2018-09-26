@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 import brandColors from '../../assets/styling/colors';
+import brandFonts from '../../assets/styling/fonts';
 
 export default StyleSheet.create({
   header: {
@@ -16,7 +17,7 @@ export default StyleSheet.create({
     color: brandColors.headingTextColor,
     fontSize: 22,
     position: 'relative',
-    fontFamily: 'Pacifico Regular',
+    fontFamily: brandFonts.displayFont,
     top: 17,
   },
   addIngredientIcon: {

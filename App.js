@@ -6,6 +6,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 import thunk from 'redux-thunk';
 import storage from 'redux-persist/lib/storage'
 import { Provider } from 'react-redux';
+import { Font } from 'expo';
 
 import reducer from './reducer';
 import AppNavigator from './AppNavigator';
@@ -29,13 +30,32 @@ const styles = StyleSheet.create({
 });
 
 export default class App extends React.Component {
+  state = {
+    fontLoaded: false,
+  };
+
+  async componentDidMount() {
+    await Font.loadAsync({
+      'Arimo Regular': require('./assets/fonts/Arimo-Regular.ttf'),
+      'Arimo Bold': require('./assets/fonts/Arimo-Bold.ttf'),
+      'Arimo Italic': require('./assets/fonts/Arimo-Italic.ttf'),
+      'Arimo Bold Italic': require('./assets/fonts/Arimo-BoldItalic.ttf'),
+      'Pacifico Regular': require('./assets/fonts/Pacifico.ttf'),
+    })
+
+    this.setState({ fontLoaded: true });
+  }
 
   render() {
     return (
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-            <AppNavigator style={styles.stackView} />
-          </PersistGate>
+          {
+            this.state.fontLoaded ? (
+              <AppNavigator style={styles.stackView} />
+            ) : null
+          }
+        </PersistGate>
       </Provider>
     );
   }
