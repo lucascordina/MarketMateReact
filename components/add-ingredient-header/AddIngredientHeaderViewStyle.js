@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 import brandColors from '../../assets/styling/colors';
+import brandFonts from '../../assets/styling/fonts';
 
 export default StyleSheet.create({
   header: {
@@ -14,6 +15,7 @@ export default StyleSheet.create({
   headerText: {
     alignSelf: 'center',
     color: brandColors.headingTextColor,
+    fontFamily: brandFonts.primaryFont,
     fontSize: 22,
     marginTop: 20,
     position: 'relative',

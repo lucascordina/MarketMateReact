@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 import brandColors from '../../assets/styling/colors';
+import brandFonts from '../../assets/styling/fonts';
 
 export default StyleSheet.create({
   ingredientListRoot: {
@@ -67,25 +68,29 @@ export default StyleSheet.create({
     shadowRadius: 1,
   },
   ingredientTitle: {
-    fontSize: 18,
+    fontSize: 16,
     color: brandColors.primaryTextColor,
+    fontFamily: brandFonts.primaryFontBold,
     flex: 9,
   },
   ingredientTitleChecked: {
-    fontSize: 18,
+    fontSize: 16,
     textDecorationLine: 'line-through',
+    fontFamily: brandFonts.primaryFontBold,
     color: brandColors.primaryTextColor,
     flex: 9,
   },
   ingredientSubtitle: {
     fontSize: 12,
+    fontFamily: brandFonts.primaryFont,
     color: brandColors.primaryTextColor,
     fontWeight: '300',
   },
   ingredientCategoryHeader: {
-    fontSize: 24,
+    fontSize: 26,
     color: brandColors.secondaryTextColor,
     fontWeight: '800',
+    fontFamily: brandFonts.displayFont,
     marginTop: 0,
     marginBottom: 10,
     marginLeft: 16,
@@ -98,6 +103,7 @@ export default StyleSheet.create({
   },
   replacementText: {
     color: brandColors.secondaryTextColor,
+    fontFamily: brandFonts.primaryFont,
   },
   replacementCaret: {
     flex: 0.8,
