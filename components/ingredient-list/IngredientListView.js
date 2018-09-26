@@ -65,7 +65,21 @@ class IngredientListView extends Component {
       const section = {
         data: value.listIngredients,
         title: value.name,
+        image: null,
       };
+
+      switch (value.name.toLowerCase()) {
+        case 'dairy':
+          section.image = require('../../assets/icons/dairy.png');
+          break;
+        case 'meat':
+          section.image = require('../../assets/icons/meat.png');
+          break;
+        case 'produce':
+          section.image = require('../../assets/icons/produce.png');
+          break;
+      }
+
       sections.push(section);
     });
 
@@ -77,7 +91,10 @@ class IngredientListView extends Component {
           showsVerticalScrollIndicator={false}
           renderItem={item => this.renderItem(item)}
           renderSectionHeader={item => (
-            <Text style={styles.ingredientCategoryHeader}>{item.section.title}</Text>
+            <View style={styles.ingredientCategoryHeader}>
+              <Text style={styles.ingredientCategoryHeaderText}>{item.section.title}</Text>
+              <Image style={styles.ingredientCategoryHeaderIcon} source={item.section.image} />
+            </View>
           )}
           stickySectionHeadersEnabled={false}
           keyExtractor={(item, index) => `ingredient-list-row-${index}`}

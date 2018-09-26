@@ -86,7 +86,11 @@ export default StyleSheet.create({
     color: brandColors.primaryTextColor,
     fontWeight: '300',
   },
+
   ingredientCategoryHeader: {
+    flexDirection: 'row',
+  },
+  ingredientCategoryHeaderText: {
     fontSize: 26,
     color: brandColors.secondaryTextColor,
     fontWeight: '800',
@@ -94,7 +98,17 @@ export default StyleSheet.create({
     marginTop: 0,
     marginBottom: 10,
     marginLeft: 16,
+    width: '80%',
   },
+  ingredientCategoryHeaderIcon: {
+    width: '11%',
+    resizeMode: 'contain',
+    marginTop: -39,
+    marginBottom: -30,
+    opacity: 0.9,
+  },
+
+
   ingredientTopRow: {
     flexDirection: 'row',
   },
