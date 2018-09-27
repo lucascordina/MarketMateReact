@@ -39,28 +39,29 @@ class IngredientListView extends Component {
   renderItem = row => (
     <View style={IngredientListView.getCellStyle(row.index, row.section.data.length)} >
     <Swipeout right={this.swipeoutButtons} style={styles.swipeoutContainer}>
-      
-        <View style={styles.ingredientTopRow}>
-          <Text style={row.item.isChecked ? styles.ingredientTitleChecked : styles.ingredientTitle}>
-            {row.item.title}
-          </Text>
-          <TouchableOpacity
-            onPress={() => this.ExpandIngredient(row)}
-            style={row.item.isExpanded ? styles.hidden : null}
-            hitSlop={{top: 30, bottom: 30, left: 50, right: 50}}>
-              <Image source={require('../../assets/icons/caret-side.png')} style={row.item.hasSubstitutes ? styles.replacementCaret : styles.hidden} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => this.CollapseIngredient(row)}
-            style={row.item.isExpanded ? null : styles.hidden}
-            hitSlop={{top: 30, bottom: 30, left: 50, right: 50}}>
-              <Image source={require('../../assets/icons/caret-down.png')} style={styles.expandedCaret} />
-          </TouchableOpacity>
-        </View>
-        <Text style={styles.ingredientSubtitle}>{row.item.amount}</Text>
-        <View style={row.item.isExpanded ? styles.replacementRow : styles.hidden}>
-          <Text style={styles.replacementText}>{'→ ' + row.item.replacement}</Text>
-        </View>
+          <View style={styles.ingredientInternal}>
+            <View style={styles.ingredientTopRow}>
+              <Text style={row.item.isChecked ? styles.ingredientTitleChecked : styles.ingredientTitle}>
+                {row.item.title}
+              </Text>
+              <TouchableOpacity
+                onPress={() => this.ExpandIngredient(row)}
+                style={row.item.isExpanded ? styles.hidden : null}
+                hitSlop={{top: 30, bottom: 30, left: 50, right: 50}}>
+                  <Image source={require('../../assets/icons/caret-side.png')} style={row.item.hasSubstitutes ? styles.replacementCaret : styles.hidden} />
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => this.CollapseIngredient(row)}
+                style={row.item.isExpanded ? null : styles.hidden}
+                hitSlop={{top: 30, bottom: 30, left: 50, right: 50}}>
+                  <Image source={require('../../assets/icons/caret-down.png')} style={styles.expandedCaret} />
+              </TouchableOpacity>
+            </View>
+            <Text style={styles.ingredientSubtitle}>{row.item.amount}</Text>
+            <View style={row.item.isExpanded ? styles.replacementRow : styles.hidden}>
+              <Text style={styles.replacementText}>{'→ ' + row.item.replacement}</Text>
+            </View>
+          </View>
         </Swipeout>
       </View>
     
