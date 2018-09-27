@@ -22,10 +22,6 @@ export default StyleSheet.create({
   ingredientCell: {
     flex: 1,
     backgroundColor: brandColors.cellColor,
-    paddingTop: 12,
-    paddingBottom: 12,
-    paddingLeft: 26,
-    paddingRight: 26,
     marginRight: -10,
     marginLeft: -10,
     borderBottomWidth: 1,
@@ -37,10 +33,6 @@ export default StyleSheet.create({
   ingredientCellFirst: {
     flex: 1,
     backgroundColor: brandColors.cellColor,
-    paddingTop: 12,
-    paddingBottom: 12,
-    paddingLeft: 26,
-    paddingRight: 26,
     marginRight: -10,
     marginLeft: -10,
     borderBottomWidth: 1,
@@ -54,10 +46,6 @@ export default StyleSheet.create({
   ingredientCellLast: {
     flex: 1,
     backgroundColor: brandColors.cellColor,
-    paddingTop: 12,
-    paddingBottom: 12,
-    paddingLeft: 26,
-    paddingRight: 26,
     marginRight: -10,
     marginLeft: -10,
     marginBottom: 15,
@@ -66,6 +54,14 @@ export default StyleSheet.create({
     shadowOpacity: 0.19,
     shadowOffset: { width: 0, height: 1 },
     shadowRadius: 1,
+  },
+  swipeoutContainer: {
+    flex: 1,
+    backgroundColor: null,
+    paddingTop: 12,
+    paddingBottom: 12,
+    paddingLeft: 26,
+    paddingRight: 26,
   },
   ingredientTitle: {
     fontSize: 16,

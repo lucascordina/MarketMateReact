@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, SectionList, Text, Image, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
+import Swipeout from 'react-native-swipeout';
 
 import { deleteList, populateDefaultList } from '../../actions';
 import PlaceHolderRandomizerView from '../placeholder-randomizer/PlaceHolderRandomizerView';
@@ -19,9 +20,6 @@ class IngredientListView extends Component {
     return styles.ingredientCell;
   }
 
-  async componentDidMount() {
-  }
-
   ExpandIngredient(row) {
     row.item.isExpanded = true;
     this.forceUpdate();
@@ -32,30 +30,40 @@ class IngredientListView extends Component {
     this.forceUpdate();
   }
 
+  swipeoutButtons = [
+    {
+      text: 'Remove'
+    }
+  ];
+
   renderItem = row => (
     <View style={IngredientListView.getCellStyle(row.index, row.section.data.length)} >
-      <View style={styles.ingredientTopRow}>
-        <Text style={row.item.isChecked ? styles.ingredientTitleChecked : styles.ingredientTitle}>
-          {row.item.title}
-        </Text>
-        <TouchableOpacity
-          onPress={() => this.ExpandIngredient(row)}
-          style={row.item.isExpanded ? styles.hidden : null}
-          hitSlop={{top: 30, bottom: 30, left: 50, right: 50}}>
-            <Image source={require('../../assets/icons/caret-side.png')} style={row.item.hasSubstitutes ? styles.replacementCaret : styles.hidden} />
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => this.CollapseIngredient(row)}
-          style={row.item.isExpanded ? null : styles.hidden}
-          hitSlop={{top: 30, bottom: 30, left: 50, right: 50}}>
-            <Image source={require('../../assets/icons/caret-down.png')} style={styles.expandedCaret} />
-        </TouchableOpacity>
+    <Swipeout right={this.swipeoutButtons} style={styles.swipeoutContainer}>
+      
+        <View style={styles.ingredientTopRow}>
+          <Text style={row.item.isChecked ? styles.ingredientTitleChecked : styles.ingredientTitle}>
+            {row.item.title}
+          </Text>
+          <TouchableOpacity
+            onPress={() => this.ExpandIngredient(row)}
+            style={row.item.isExpanded ? styles.hidden : null}
+            hitSlop={{top: 30, bottom: 30, left: 50, right: 50}}>
+              <Image source={require('../../assets/icons/caret-side.png')} style={row.item.hasSubstitutes ? styles.replacementCaret : styles.hidden} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => this.CollapseIngredient(row)}
+            style={row.item.isExpanded ? null : styles.hidden}
+            hitSlop={{top: 30, bottom: 30, left: 50, right: 50}}>
+              <Image source={require('../../assets/icons/caret-down.png')} style={styles.expandedCaret} />
+          </TouchableOpacity>
+        </View>
+        <Text style={styles.ingredientSubtitle}>{row.item.amount}</Text>
+        <View style={row.item.isExpanded ? styles.replacementRow : styles.hidden}>
+          <Text style={styles.replacementText}>{'→ ' + row.item.replacement}</Text>
+        </View>
+        </Swipeout>
       </View>
-      <Text style={styles.ingredientSubtitle}>{row.item.amount}</Text>
-      <View style={row.item.isExpanded ? styles.replacementRow : styles.hidden}>
-        <Text style={styles.replacementText}>{'→ ' + row.item.replacement}</Text>
-      </View>
-    </View>
+    
   )
 
   render() {
@@ -68,6 +76,14 @@ class IngredientListView extends Component {
         image: null,
       };
 
+      /*TODO:
+        - Condiments
+        - Cooking
+        - Beverages
+        - Household
+        - Bath
+        - Herbs & Spices
+      */
       switch (value.name.toLowerCase()) {
         case 'dairy':
           section.image = require('../../assets/icons/dairy.png');
