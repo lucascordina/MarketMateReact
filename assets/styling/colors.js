@@ -8,6 +8,13 @@ const brandColors = {
 
   fourStepGradient: [ '#42A5F5', '#298CDC', '#2980B9', '#1A74C1' ],
 
+  successColor: '#4cd964',
+  successColorLighter: '#66F37E',
+  warningColor: '#ffcc00',
+  warningColorLighter: '#FFE61A',
+  errorColor: '#ff3b30',
+  errorColorLighter: '#FF554A',
+
   iconColor: '#fff',
 
   borderColor: '#ddd',

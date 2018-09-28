@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import Swipeout from 'react-native-swipeout';
 
+import brandColors from '../../assets/styling/colors';
 import { deleteList, populateDefaultList } from '../../actions';
 import PlaceHolderRandomizerView from '../placeholder-randomizer/PlaceHolderRandomizerView';
 
@@ -24,6 +25,8 @@ class IngredientListView extends Component {
     row.item.isExpanded = true;
     this.forceUpdate();
   }
+
+
   
   CollapseIngredient(row) {
     row.item.isExpanded = false;
@@ -32,7 +35,14 @@ class IngredientListView extends Component {
 
   swipeoutButtons = [
     {
-      text: 'Remove'
+      text: 'Edit',
+      backgroundColor: brandColors.warningColor,
+      underlayColor: brandColors.warningColorLighter,
+    },
+    {
+      text: 'Remove',
+      backgroundColor: brandColors.errorColor,
+      underlayColor: brandColors.errorColorLighter,
     }
   ];
 
