@@ -5,7 +5,7 @@ import { PropTypes } from 'prop-types';
 import Swipeout from 'react-native-swipeout';
 
 import brandColors from '../../assets/styling/colors';
-import { deleteList, populateDefaultList, deleteIngredient } from '../../actions';
+import { deleteIngredient } from '../../actions';
 import PlaceHolderRandomizerView from '../placeholder-randomizer/PlaceHolderRandomizerView';
 
 import styles from './IngredientListViewStyle';
@@ -25,33 +25,33 @@ class IngredientListView extends Component {
     row.item.isExpanded = true;
     this.forceUpdate();
   }
-
-
   
   CollapseIngredient(row) {
     row.item.isExpanded = false;
     this.forceUpdate();
   }
 
-  swipeoutButtons = [
-    {
-      text: 'Edit',
-      backgroundColor: brandColors.warningColor,
-      underlayColor: brandColors.warningColorLighter,
-    },
-    {
-      text: 'Remove',
-      backgroundColor: brandColors.errorColor,
-      underlayColor: brandColors.errorColorLighter,
-      onPress: () => {
-        this.props.p_deleteIngredient();
+  renderItem = row => 
+  {
+    swipeoutButtons = [
+      {
+        text: 'Edit',
+        backgroundColor: brandColors.warningColor,
+        underlayColor: brandColors.warningColorLighter,
       },
-    }
-  ];
+      {
+        text: 'Remove',
+        backgroundColor: brandColors.errorColor,
+        underlayColor: brandColors.errorColorLighter,
+        onPress: () => {
+          this.props.p_deleteIngredient(row.item.id);
+        },
+      }
+    ];
 
-  renderItem = row => (
+    return (
     <View style={IngredientListView.getCellStyle(row.index, row.section.data.length)} >
-    <Swipeout right={this.swipeoutButtons} style={styles.swipeoutContainer}>
+    <Swipeout right={swipeoutButtons} style={styles.swipeoutContainer}>
           <View style={styles.ingredientInternal}>
             <View style={styles.ingredientTopRow}>
               <Text style={row.item.isChecked ? styles.ingredientTitleChecked : styles.ingredientTitle}>
@@ -77,9 +77,8 @@ class IngredientListView extends Component {
           </View>
         </Swipeout>
       </View>
-    
-  )
-
+    )
+  }
   render() {
     const { list } = this.props;
     const { sections } = this.props;

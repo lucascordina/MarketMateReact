@@ -1,4 +1,4 @@
-import { DELETE_LIST , DELETE_INGREDIENT} from './reducer';
+import { DELETE_LIST , DELETE_INGREDIENT, POPULATE_DEFAULT_LIST } from './reducer';
 
 export function deleteList() {
     return {

@@ -25,7 +25,6 @@ export default class ListService {
   }
 
   static DeleteIngredientFromList(list, ingredientId) {
-    console.log(list);
     console.log(ingredientId);
     return list;
   }
