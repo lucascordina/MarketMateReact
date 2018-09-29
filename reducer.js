@@ -12,8 +12,7 @@ export default function reducer(state = { list: new List() }, action) {
     case DELETE_LIST:
       return { ...state, list: new List()};
     case DELETE_INGREDIENT:
-      ListService.DeleteIngredientFromList(state.list, action.value);
-      return { ...state}
+      return { ...state, list: ListService.DeleteIngredientFromList(state.list, action.value)}
     default:
       return state;
   }

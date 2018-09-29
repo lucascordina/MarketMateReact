@@ -36,6 +36,8 @@ export default class ListService {
 
       }
     });
-    return list;
+
+    let newList = Object.assign({}, list);
+    return newList;
   }
 }
