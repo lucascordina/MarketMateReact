@@ -19,10 +19,13 @@ function GenerateMockListCategories() {
   ];
 }
 
+function DeleteIngredientFromList(list, ingredientId) {
+  console.log(list);
+  return list;
+}
+
 export default class ListService {
   static GetDefaultList() {
     return new List('My List', GenerateMockListCategories());
   }
 }
-
-
