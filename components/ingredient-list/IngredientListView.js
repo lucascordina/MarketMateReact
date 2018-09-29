@@ -126,7 +126,7 @@ class IngredientListView extends Component {
             </View>
           )}
           stickySectionHeadersEnabled={false}
-          keyExtractor={(item, index) => `ingredient-list-row-${index}`}
+          keyExtractor={(item, index) => `ingredient-list-row-${item.id}`}
         />
         {
           sections.length <= 0 ? 
