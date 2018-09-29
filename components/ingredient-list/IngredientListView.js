@@ -115,19 +115,21 @@ class IngredientListView extends Component {
     return (
       <View style={styles.ingredientListRoot}>
         <SectionList
-          style={sections.length > 0 ? styles.listContainer : styles.hidden}
-          sections={sections}
-          showsVerticalScrollIndicator={false}
-          renderItem={item => this.renderItem(item)}
-          renderSectionHeader={item => (
-            <View style={styles.ingredientCategoryHeader}>
-              <Text style={styles.ingredientCategoryHeaderText}>{item.section.title}</Text>
-              <Image style={styles.ingredientCategoryHeaderIcon} source={item.section.image} />
-            </View>
-          )}
-          stickySectionHeadersEnabled={false}
-          keyExtractor={(item, index) => `ingredient-list-row-${item.id}`
+            style={sections.length > 0 ? styles.listContainer : styles.hidden}
+            sections={sections}
+            showsVerticalScrollIndicator={false}
+            renderItem={item => this.renderItem(item)}
+            renderSectionHeader={item => {
+                return (
+                <View style={styles.ingredientCategoryHeader}>
+                  <Text style={styles.ingredientCategoryHeaderText}>{item.section.title}</Text>
+                  <Image style={styles.ingredientCategoryHeaderIcon} source={item.section.image} />
+                </View>
+                );
+            }
           }
+          stickySectionHeadersEnabled={false}
+          keyExtractor={(item, index) => `ingredient-list-row-${item.id}`}
         />
         {
           sections.length <= 0 ? 

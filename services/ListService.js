@@ -25,17 +25,26 @@ export default class ListService {
   }
 
   static DeleteIngredientFromList(list, ingredientId) {
-    list.listCategories.forEach(listCategory => {
-      for (let index = 0; index < listCategory.listIngredients.length; index++) {
-        const ingredient = listCategory.listIngredients[index];
+
+    //iterate over each category of the list
+    for (let categoryIndex = 0; categoryIndex < list.listCategories.length; categoryIndex++) {
+      //iterate over each ingredient of the category
+      for (let ingredientIndex = 0; ingredientIndex < list.listCategories[categoryIndex].listIngredients.length; ingredientIndex++) {
+        const ingredient = list.listCategories[categoryIndex].listIngredients[ingredientIndex];
 
         if (ingredient.id === ingredientId) {
-          console.log(ingredientId);
-          listCategory.listIngredients.splice(index, 1);
-        }
+          list.listCategories[categoryIndex].listIngredients.splice(ingredientIndex, 1);
 
+          //If no elements are left in the category, then remove the category
+          if (list.listCategories[categoryIndex].listIngredients === undefined || list.listCategories[categoryIndex].listIngredients.length === 0) {
+            list.listCategories.splice(categoryIndex, 1);
+          }
+
+          break;
+        }
       }
-    });
+
+    }
 
     let newList = Object.assign({}, list);
     return newList;
