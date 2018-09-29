@@ -25,7 +25,17 @@ export default class ListService {
   }
 
   static DeleteIngredientFromList(list, ingredientId) {
-    console.log(ingredientId);
+    list.listCategories.forEach(listCategory => {
+      for (let index = 0; index < listCategory.listIngredients.length; index++) {
+        const ingredient = listCategory.listIngredients[index];
+
+        if (ingredient.id === ingredientId) {
+          console.log(ingredientId);
+          listCategory.listIngredients.splice(index, 1);
+        }
+
+      }
+    });
     return list;
   }
 }
