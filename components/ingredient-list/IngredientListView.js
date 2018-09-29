@@ -5,7 +5,7 @@ import { PropTypes } from 'prop-types';
 import Swipeout from 'react-native-swipeout';
 
 import brandColors from '../../assets/styling/colors';
-import { deleteList, populateDefaultList } from '../../actions';
+import { deleteList, populateDefaultList, deleteIngredient } from '../../actions';
 import PlaceHolderRandomizerView from '../placeholder-randomizer/PlaceHolderRandomizerView';
 
 import styles from './IngredientListViewStyle';
@@ -43,6 +43,9 @@ class IngredientListView extends Component {
       text: 'Remove',
       backgroundColor: brandColors.errorColor,
       underlayColor: brandColors.errorColorLighter,
+      onPress: () => {
+        this.props.p_deleteIngredient();
+      },
     }
   ];
 
@@ -147,8 +150,7 @@ const mapStateToProps = state => ({ list: state.list, sections: [] });
 
 function mapDispatchToProps(dispatch) {
   return({
-    p_populateDefaultList: () => dispatch(populateDefaultList()),
-    p_deleteList: () => dispatch(deleteList())
+    p_deleteIngredient: (ingredientId) => dispatch(deleteIngredient(ingredientId)),
   })
 }
 
