@@ -22,39 +22,25 @@ export default StyleSheet.create({
     fontSize: 18,
     fontFamily: brandFonts.primaryFont,
   },
+
   addIngredientAmountContainer: {
     flexDirection: 'row',
-    flex: 1,
+    width: '100%',
     paddingTop: 25,
     marginLeft: 25,
     marginRight: 25,
+    height: 60,
   },
-  addIngredientLabel: {
-    fontSize: 16,
-    marginRight: 8,
-    color: brandColors.secondaryTextColor,
+
+  categoryContainer: {
+    flex: 1,
+    height: 200,
+    backgroundColor: brandColors.defaultBackground,
   },
-  separator: {
-    color: brandColors.secondaryTextColor,
-    fontSize: 16,
-    marginLeft: 5,
-    marginRight: 5,
-  },
-  quantityInput: {
-    fontSize: 16,
-    fontFamily: brandFonts.primaryFontBold,
-    color: brandColors.primaryTextColor,
-    height: 20,
-    paddingLeft: 2,
-    width: 40,
-    textAlign: 'right',
-  },
-  quantityTypeInput: {
-    fontSize: 16,
-    fontFamily: brandFonts.primaryFontBold,
-    color: brandColors.primaryTextColor,
-    height: 20,
-    width: 100,
-    paddingLeft: 2,
+  serratedBorder: {
+    width: '105%',
+    position: 'relative',
+    top: -8,
+    left: -5,
   },
 });

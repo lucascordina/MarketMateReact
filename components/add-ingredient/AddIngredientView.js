@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TextInput, Text } from 'react-native';
+import { View, TextInput, Text, Image } from 'react-native';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 
@@ -25,11 +25,9 @@ class AddIngredientView extends Component {
     return (
         <View style={styles.addIngredientContainer}>
           <TextInput style={styles.addIngredientTextbox} placeholder='Your Ingredient' />
-          <View style={styles.addIngredientAmountContainer}>
-            <Text style={styles.addIngredientLabel}>Amount:</Text>
-            <TextInput style={styles.quantityInput} placeholder='100' />
-            <Text style={styles.separator}>|</Text>
-            <TextInput style={styles.quantityTypeInput} placeholder='qty' />
+          <TextInput style={styles.addIngredientTextbox} placeholder='500 grams' />
+          <View style={styles.categoryContainer}>
+            <Image style={styles.serratedBorder} source={require('../../assets/elements/border-bottom-clipped.png')} />
           </View>
         </View>
     );
