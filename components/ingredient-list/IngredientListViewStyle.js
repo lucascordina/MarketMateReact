@@ -85,6 +85,7 @@ export default StyleSheet.create({
 
   ingredientCategoryHeader: {
     flexDirection: 'row',
+    overflow: 'hidden',
   },
   ingredientCategoryHeaderText: {
     fontSize: 26,
@@ -99,8 +100,9 @@ export default StyleSheet.create({
   ingredientCategoryHeaderIcon: {
     width: '11%',
     resizeMode: 'contain',
-    marginTop: -39,
-    marginBottom: -30,
+    position: 'absolute',
+    top: -38,
+    right: 15,
     opacity: 0.9,
   },
 
