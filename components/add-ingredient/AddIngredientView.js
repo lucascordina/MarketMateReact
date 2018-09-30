@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, TextInput } from 'react-native';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 
@@ -24,6 +24,7 @@ class AddIngredientView extends Component {
     });
     return (
         <View style={styles.addIngredientContainer}>
+          <TextInput style={styles.addIngredientTextbox} placeholder='Your Ingredient' />
         </View>
     );
   }

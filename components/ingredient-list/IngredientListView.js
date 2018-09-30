@@ -44,7 +44,6 @@ class IngredientListView extends Component {
         backgroundColor: brandColors.errorColor,
         underlayColor: brandColors.errorColorLighter,
         onPress: () => {
-          console.log(row.item);
           this.props.p_deleteIngredient(row.item.id);
         },
       }
