@@ -26,7 +26,7 @@ export default StyleSheet.create({
   addIngredientAmountContainer: {
     flexDirection: 'row',
     width: '100%',
-    paddingTop: 25,
+    paddingTop: 28,
     marginLeft: 25,
     marginRight: 25,
     height: 60,
@@ -40,7 +40,7 @@ export default StyleSheet.create({
   serratedBorder: {
     width: '105%',
     position: 'relative',
-    top: -8,
+    top: -11,
     left: -5,
   },
 });
