@@ -1,4 +1,4 @@
-import { DELETE_LIST , DELETE_INGREDIENT, POPULATE_DEFAULT_LIST } from './reducer';
+import { DELETE_LIST , DELETE_INGREDIENT, POPULATE_DEFAULT_LIST, CHECK_INGREDIENT } from './reducer';
 
 export function deleteList() {
     return {
@@ -15,6 +15,13 @@ export function populateDefaultList() {
 export function deleteIngredient(ingredientID) {
     return {
         type: DELETE_INGREDIENT,
+        value: ingredientID
+    }
+}
+
+export function checkIngredient(ingredientID) {
+    return {
+        type: CHECK_INGREDIENT,
         value: ingredientID
     }
 }

@@ -5,7 +5,7 @@ import { PropTypes } from 'prop-types';
 import Swipeout from 'react-native-swipeout';
 
 import brandColors from '../../assets/styling/colors';
-import { deleteIngredient } from '../../actions';
+import { deleteIngredient, checkIngredient } from '../../actions';
 import PlaceHolderRandomizerView from '../placeholder-randomizer/PlaceHolderRandomizerView';
 
 import styles from './IngredientListViewStyle';
@@ -49,9 +49,20 @@ class IngredientListView extends Component {
       }
     ];
 
+    swipeoutButtonsLeft = [
+      {
+        text: 'Check',
+        backgroundColor: brandColors.errorColor,
+        underlayColor: brandColors.errorColorLighter,
+        onPress: () => {
+          this.props.p_checkIngredient(row.item.id);
+        },
+      }
+    ];
+
     return (
     <View style={IngredientListView.getCellStyle(row.index, row.section.data.length)} >
-    <Swipeout right={swipeoutButtons} style={styles.swipeoutContainer}>
+    <Swipeout left={swipeoutButtonsLeft} right={swipeoutButtons} style={styles.swipeoutContainer}>
           <View style={styles.ingredientInternal}>
             <View style={styles.ingredientTopRow}>
               <Text style={row.item.isChecked ? styles.ingredientTitleChecked : styles.ingredientTitle}>
@@ -153,6 +164,7 @@ const mapStateToProps = state => ({ list: state.list, sections: [] });
 function mapDispatchToProps(dispatch) {
   return({
     p_deleteIngredient: (ingredientId) => dispatch(deleteIngredient(ingredientId)),
+    p_checkIngredient: (ingredientId) => dispatch(checkIngredient(ingredientId)),
   })
 }
 
