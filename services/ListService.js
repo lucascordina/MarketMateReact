@@ -24,6 +24,26 @@ export default class ListService {
     return new List('My List', GenerateMockListCategories());
   }
 
+  static CheckIngredientFromList(list, ingredientId) {
+    //iterate over each category of the list
+    for (let categoryIndex = 0; categoryIndex < list.listCategories.length; categoryIndex++) {
+      //iterate over each ingredient of the category
+      for (let ingredientIndex = 0; ingredientIndex < list.listCategories[categoryIndex].listIngredients.length; ingredientIndex++) {
+        const ingredient = list.listCategories[categoryIndex].listIngredients[ingredientIndex];
+
+        if (ingredient.id === ingredientId) {
+          let foundIngredient = list.listCategories[categoryIndex].listIngredients[ingredientIndex];
+          foundIngredient.isChecked = !foundIngredient.isChecked;
+          break;
+        }
+      }
+
+    }
+
+    let newList = Object.assign({}, list);
+    return newList;
+  }
+
   static DeleteIngredientFromList(list, ingredientId) {
 
     //iterate over each category of the list
