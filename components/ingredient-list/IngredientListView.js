@@ -55,20 +55,9 @@ class IngredientListView extends Component {
       }
     ];
 
-    swipeoutButtonsLeft = [
-      {
-        text: 'Check',
-        backgroundColor: brandColors.errorColor,
-        underlayColor: brandColors.errorColorLighter,
-        onPress: () => {
-          this.props.p_checkIngredient(row.item.id);
-        },
-      }
-    ];
-
     return (
     <View style={IngredientListView.getCellStyle(row.index, row.section.data.length)} >
-    <Swipeout left={swipeoutButtonsLeft} right={swipeoutButtons} style={styles.swipeoutContainer}>
+    <Swipeout right={swipeoutButtons} style={styles.swipeoutContainer}>
           <View style={styles.ingredientInternal}>
             <TouchableOpacity
               style={row.item.isChecked ? styles.ingredientCheckboxHidden : styles.ingredientCheckbox }
