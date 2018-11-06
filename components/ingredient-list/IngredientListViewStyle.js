@@ -57,11 +57,22 @@ export default StyleSheet.create({
   },
   ingredientInternal: {
     flex: 1,
+    flexDirection: 'row',
     backgroundColor: brandColors.cellColor,
     paddingTop: 12,
     paddingBottom: 12,
     paddingLeft: 26,
     paddingRight: 26,
+  },
+  ingredientContentWrapper: {
+    flex: 1,
+  },
+  ingredientCheckbox: {
+    marginRight: 8,
+    marginTop: 3,
+  },
+  ingredientCheckboxHidden: {
+    display: 'none',
   },
   ingredientTitle: {
     fontSize: 16,

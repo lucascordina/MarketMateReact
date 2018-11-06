@@ -3,6 +3,7 @@ import { View, SectionList, Text, Image, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import Swipeout from 'react-native-swipeout';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import brandColors from '../../assets/styling/colors';
 import { deleteIngredient, checkIngredient } from '../../actions';
@@ -28,6 +29,11 @@ class IngredientListView extends Component {
   
   CollapseIngredient(row) {
     row.item.isExpanded = false;
+    this.forceUpdate();
+  }
+
+  CheckIngredient(row) {
+    this.props.p_checkIngredient(row.item.id);
     this.forceUpdate();
   }
 
@@ -64,26 +70,38 @@ class IngredientListView extends Component {
     <View style={IngredientListView.getCellStyle(row.index, row.section.data.length)} >
     <Swipeout left={swipeoutButtonsLeft} right={swipeoutButtons} style={styles.swipeoutContainer}>
           <View style={styles.ingredientInternal}>
-            <View style={styles.ingredientTopRow}>
-              <Text style={row.item.isChecked ? styles.ingredientTitleChecked : styles.ingredientTitle}>
-                {row.item.title}
-              </Text>
-              <TouchableOpacity
-                onPress={() => this.ExpandIngredient(row)}
-                style={row.item.isExpanded ? styles.hidden : null}
-                hitSlop={{top: 30, bottom: 30, left: 50, right: 50}}>
-                  <Image source={require('../../assets/icons/caret-side.png')} style={row.item.hasSubstitutes ? styles.replacementCaret : styles.hidden} />
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => this.CollapseIngredient(row)}
-                style={row.item.isExpanded ? null : styles.hidden}
-                hitSlop={{top: 30, bottom: 30, left: 50, right: 50}}>
-                  <Image source={require('../../assets/icons/caret-down.png')} style={styles.expandedCaret} />
-              </TouchableOpacity>
-            </View>
-            <Text style={styles.ingredientSubtitle}>{row.item.amount}</Text>
-            <View style={row.item.isExpanded ? styles.replacementRow : styles.hidden}>
-              <Text style={styles.replacementText}>{'→ ' + row.item.replacement}</Text>
+            <TouchableOpacity
+              style={row.item.isChecked ? styles.ingredientCheckboxHidden : styles.ingredientCheckbox }
+              onPress={() => this.CheckIngredient(row)}>
+                <Icon name="ios-square-outline" size={30} />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={row.item.isChecked ? styles.ingredientCheckbox : styles.ingredientCheckboxHidden}
+              onPress={() => this.CheckIngredient(row)}>
+                <Icon name="ios-checkbox-outline" size={30} />
+            </TouchableOpacity>
+            <View style={styles.ingredientContentWrapper}>
+              <View style={styles.ingredientTopRow}>
+                <Text style={row.item.isChecked ? styles.ingredientTitleChecked : styles.ingredientTitle}>
+                  {row.item.title}
+                </Text>
+                <TouchableOpacity
+                  onPress={() => this.ExpandIngredient(row)}
+                  style={row.item.isExpanded ? styles.hidden : null}
+                  hitSlop={{top: 30, bottom: 30, left: 50, right: 50}}>
+                    <Image source={require('../../assets/icons/caret-side.png')} style={row.item.hasSubstitutes ? styles.replacementCaret : styles.hidden} />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => this.CollapseIngredient(row)}
+                  style={row.item.isExpanded ? null : styles.hidden}
+                  hitSlop={{top: 30, bottom: 30, left: 50, right: 50}}>
+                    <Image source={require('../../assets/icons/caret-down.png')} style={styles.expandedCaret} />
+                </TouchableOpacity>
+              </View>
+              <Text style={styles.ingredientSubtitle}>{row.item.amount}</Text>
+              <View style={row.item.isExpanded ? styles.replacementRow : styles.hidden}>
+                <Text style={styles.replacementText}>{'→ ' + row.item.replacement}</Text>
+              </View>
             </View>
           </View>
         </Swipeout>
