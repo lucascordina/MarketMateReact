@@ -32,15 +32,43 @@ export default StyleSheet.create({
     height: 60,
   },
 
+  categoryLabel: {
+    fontSize: 17,
+    marginTop: 10,
+    marginLeft: 25,
+    height: 30,
+    color: brandColors.lightTextColor,
+  },
   categoryContainer: {
-    flex: 1,
-    height: 200,
+    height: 100,
     backgroundColor: brandColors.defaultBackground,
   },
-  serratedBorder: {
+  serratedBorderTop: {
     width: '105%',
     position: 'relative',
     top: -11,
     left: -5,
+  },
+  serratedBorderBottom: {
+    width: '105%',
+    position: 'relative',
+    bottom: -11,
+    left: -5,
+    transform: [{ rotateX: '180deg' }],
+  },
+  categoryScrollView: {
+    height: 80,
+    flex: 1,
+  },
+  categoryButton: {
+    height: 80,
+    width: 80,
+    marginTop: 20,
+    marginBottom: 20,
+  },
+  categoryButtonIcon: {
+    resizeMode: 'center',
+    position: 'relative',
+    top: -60,
   },
 });
